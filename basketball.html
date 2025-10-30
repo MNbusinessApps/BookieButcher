@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bookie Butcher - Basketball</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <i class="fas fa-utensils logo-icon"></i>
+                <span class="logo-text">The Bookie Butcher</span>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="live-betting.html" class="nav-link">Live Betting</a>
+                <a href="props.html" class="nav-link">Props</a>
+                <a href="football.html" class="nav-link">Football</a>
+                <a href="basketball.html" class="nav-link active">
+                    <i class="fas fa-basketball-ball"></i>
+                    Basketball
+                </a>
+                <a href="baseball.html" class="nav-link">Baseball</a>
+                <a href="combat-sports.html" class="nav-link">Combat</a>
+                <a href="bankroll-manager.html" class="nav-link">The Recipe</a>
+            </nav>
+            <div class="header-right">
+                <div class="clock-display">
+                    <span class="timezone-label">MCT</span>
+                    <span class="current-time" id="currentTime">10/29/2025 7:42:00 PM</span>
+                </div>
+                <div class="bankroll-summary">
+                    <span class="balance">$1,250.00</span>
+                    <span class="daily-pnl positive">+$127.50</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-header">
+        <div class="mobile-nav-container">
+            <div class="mobile-logo">
+                <i class="fas fa-basketball-ball"></i>
+                <span>Basketball</span>
+            </div>
+            <button class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-clock">
+            <span>MCT: <span id="mobileTime">10/29/2025 7:42:00 PM</span></span>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="menu-header">
+                <h3>Navigation</h3>
+                <button class="close-menu" id="closeMenu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a href="index.html" class="mobile-nav-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <a href="live-betting.html" class="mobile-nav-link">
+                    <i class="fas fa-play-circle"></i>
+                    Live Betting
+                </a>
+                <a href="props.html" class="mobile-nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    Props
+                </a>
+                <a href="football.html" class="mobile-nav-link">
+                    <i class="fas fa-football-ball"></i>
+                    Football
+                </a>
+                <a href="basketball.html" class="mobile-nav-link active">
+                    <i class="fas fa-basketball-ball"></i>
+                    Basketball
+                </a>
+                <a href="baseball.html" class="mobile-nav-link">
+                    <i class="fas fa-baseball-ball"></i>
+                    Baseball
+                </a>
+                <a href="combat-sports.html" class="mobile-nav-link">
+                    <i class="fas fa-fist-raised"></i>
+                    Combat Sports
+                </a>
+                <a href="bankroll-manager.html" class="mobile-nav-link">
+                    <i class="fas fa-chart-line"></i>
+                    The Recipe
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Basketball Header -->
+        <section class="sport-header">
+            <div class="container">
+                <div class="header-content">
+                    <h1 class="page-title">
+                        <i class="fas fa-basketball-ball"></i>
+                        Basketball
+                        <span class="subtitle">NBA & College Basketball Live Odds</span>
+                    </h1>
+                    <div class="sport-stats">
+                        <div class="stat-item">
+                            <span class="label">Live Games:</span>
+                            <span class="value">2</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Edge Opportunities:</span>
+                            <span class="value positive">5</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">High Confidence:</span>
+                            <span class="value positive">3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Games Section -->
+        <section class="live-games-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Live Basketball Games</h2>
+                    <div class="data-source">
+                        <span class="source-label">Odds via:</span>
+                        <span class="source-name">BetMGM Reference</span>
+                    </div>
+                </div>
+
+                <div class="games-container">
+                    <!-- Game 1: NBA - LAL vs LAC -->
+                    <div class="game-card live" data-league="nba">
+                        <div class="game-header">
+                            <div class="game-meta">
+                                <span class="league-badge nba">NBA</span>
+                                <span class="game-time">2Q 6:45</span>
+                                <span class="referee">Ref: Marc Davis</span>
+                            </div>
+                        </div>
+
+                        <div class="teams-section">
+                            <div class="team home">
+                                <span class="team-logo">🐍</span>
+                                <span class="team-name">LAL</span>
+                                <span class="team-score">68</span>
+                            </div>
+                            <div class="vs-section">
+                                <span class="vs">vs</span>
+                            </div>
+                            <div class="team away">
+                                <span class="team-logo">🦎</span>
+                                <span class="team-name">LAC</span>
+                                <span class="team-score">72</span>
+                            </div>
+                        </div>
+
+                        <div class="odds-section">
+                            <div class="odds-row">
+                                <span class="odds-label">Spread</span>
+                                <div class="odds-values">
+                                    <span class="odds-value">LAC -2.5 (-108)</span>
+                                    <span class="odds-value">LAL +2.5 (-112)</span>
+                                </div>
+                            </div>
+                            <div class="odds-row">
+                                <span class="odds-label">Moneyline</span>
+                                <div class="odds-values">
+                                    <span class="odds-value">LAC (-135)</span>
+                                    <span class="odds-value">LAL (+115)</span>
+                                </div>
+                            </div>
+                            <div class="odds-row">
+                                <span class="odds-label">Total</span>
+                                <div class="odds-values">
+                                    <span class="odds-value">O 226.5 (-110)</span>
+                                    <span class="odds-value">U 226.5 (-110)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="betting-actions">
+                            <button class="action-btn secondary">
+                                <i class="fas fa-chart-line"></i>
+                                Props
+                            </button>
+                            <button class="action-btn secondary">
+                                <i class="fas fa-info-circle"></i>
+                                Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Game 2: NBA - BOS vs MIA -->
+                    <div class="game-card live" data-league="nba">
+                        <div class="game-header">
+                            <div class="game-meta">
+                                <span class="league-badge nba">NBA</span>
+                                <span class="game-time">1Q 4:23</span>
+                                <span class="referee">Ref: Tony Brothers</span>
+                            </div>
+                        </div>
+
+                        <div class="teams-section">
+                            <div class="team home">
+                                <span class="team-logo">☘️</span>
+                                <span class="team-name">BOS</span>
+                                <span class="team-score">32</span>
+                            </div>
+                            <div class="vs-section">
+                                <span class="vs">vs</span>
+                            </div>
+                            <div class="team away">
+                                <span class="team-logo">🔥</span>
+                                <span class="team-name">MIA</span>
+                                <span class="team-score">28</span>
+                            </div>
+                        </div>
+
+                        <div class="odds-section">
+                            <div class="odds-row">
+                                <span class="odds-label">Spread</span>
+                                <div class="odds-values">
+                                    <span class="odds-value">BOS -4.5 (-105)</span>
+                                    <span class="odds-value">MIA +4.5 (-115)</span>
+                                </div>
+                            </div>
+                            <div class="odds-row">
+                                <span class="odds-label">Moneyline</span>
+                                <div class="odds-values">
+                                    <span class="odds-value">BOS (-180)</span>
+                                    <span class="odds-value">MIA (+155)</span>
+                                </div>
+                            </div>
+                            <div class="odds-row">
+                                <span class="odds-label">Total</span>
+                                <div class="odds-values">
+                                    <span class="odds-value">O 218.5 (-108)</span>
+                                    <span class="odds-value">U 218.5 (-112)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="betting-actions">
+                            <button class="action-btn secondary">
+                                <i class="fas fa-chart-line"></i>
+                                Props
+                            </button>
+                            <button class="action-btn secondary">
+                                <i class="fas fa-info-circle"></i>
+                                Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Basketball Props -->
+        <section class="sport-props">
+            <div class="container">
+                <h2>Top Basketball Props</h2>
+                <div class="props-grid">
+                    <div class="prop-card edge-high">
+                        <div class="prop-header">
+                            <span class="player">Nikola Jokic</span>
+                            <span class="team">DEN</span>
+                            <span class="sport-badge nba">NBA</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="stat-line">
+                                <span class="stat">Reb + Assists</span>
+                                <span class="line">22.0</span>
+                            </div>
+                            <div class="prediction">
+                                <span class="direction over">OVER</span>
+                                <span class="probability">68.3%</span>
+                            </div>
+                            <div class="edge">
+                                <span class="edge-value">+14.7% Edge</span>
+                                <span class="confidence">Very High</span>
+                            </div>
+                            <div class="formula">
+                                Expected: 21.4 (95% CI: 18.2-24.6)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prop-card edge-high">
+                        <div class="prop-header">
+                            <span class="player">LeBron James</span>
+                            <span class="team">LAL</span>
+                            <span class="sport-badge nba">NBA</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="stat-line">
+                                <span class="stat">Points</span>
+                                <span class="line">24.5</span>
+                            </div>
+                            <div class="prediction">
+                                <span class="direction over">OVER</span>
+                                <span class="probability">65.1%</span>
+                            </div>
+                            <div class="edge">
+                                <span class="edge-value">+9.2% Edge</span>
+                                <span class="confidence">Medium</span>
+                            </div>
+                            <div class="formula">
+                                Season avg: 26.8 | Home split: +1.4
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prop-card edge-medium">
+                        <div class="prop-header">
+                            <span class="player">Jayson Tatum</span>
+                            <span class="team">BOS</span>
+                            <span class="sport-badge nba">NBA</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="stat-line">
+                                <span class="stat">3-Pointers Made</span>
+                                <span class="line">2.5</span>
+                            </div>
+                            <div class="prediction">
+                                <span class="direction over">OVER</span>
+                                <span class="probability">58.7%</span>
+                            </div>
+                            <div class="edge">
+                                <span class="edge-value">+7.1% Edge</span>
+                                <span class="confidence">Medium</span>
+                            </div>
+                            <div class="formula">
+                                3P% this season: 37.2% | Attempts: 6.8/game
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prop-card edge-high">
+                        <div class="prop-header">
+                            <span class="player">Tyler Herro</span>
+                            <span class="team">MIA</span>
+                            <span class="sport-badge nba">NBA</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="stat-line">
+                                <span class="stat">Points</span>
+                                <span class="line">18.5</span>
+                            </div>
+                            <div class="prediction">
+                                <span class="direction over">OVER</span>
+                                <span class="probability">62.4%</span>
+                            </div>
+                            <div class="edge">
+                                <span class="edge-value">+8.3% Edge</span>
+                                <span class="confidence">Medium</span>
+                            </div>
+                            <div class="formula">
+                                Season avg: 19.8 | vs BOS: 21.3 avg
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Flow Analysis -->
+        <section class="game-analysis">
+            <div class="container">
+                <h2>Game Flow Analysis</h2>
+                <div class="analysis-grid">
+                    <div class="analysis-card">
+                        <h3>LAL vs LAC - Pace Analysis</h3>
+                        <div class="analysis-content">
+                            <div class="metric-row">
+                                <span class="metric">Current Pace:</span>
+                                <span class="value">102.3 possessions/game</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric">Expected Pace:</span>
+                                <span class="value">98.5 possessions/game</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric">Pace Differential:</span>
+                                <span class="value positive">+3.8% (FAVORS OVER)</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric">Expected Final Score:</span>
+                                <span class="value">232-226 (O 226.5)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-card">
+                        <h3>BOS vs MIA - Referee Impact</h3>
+                        <div class="analysis-content">
+                            <div class="metric-row">
+                                <span class="metric">Referee:</span>
+                                <span class="value">Tony Brothers</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric">Fouls/Game:</span>
+                                <span class="value">47.2 (High)</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric">Free Throw Rate:</span>
+                                <span class="value">+15.3% boost</span>
+                            </div>
+                            <div class="metric-row">
+                                <span class="metric">Impact:</span>
+                                <span class="value positive">Favors over totals</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Injury Reports -->
+        <section class="injury-reports">
+            <div class="container">
+                <h2>Basketball Injury Reports</h2>
+                <div class="injury-grid">
+                    <div class="injury-card">
+                        <h3>NBA Injuries</h3>
+                        <div class="injury-list">
+                            <div class="injury-item doubtful">
+                                <span class="player">Anthony Davis (LAL)</span>
+                                <span class="status">Doubtful - Foot</span>
+                            </div>
+                            <div class="injury-item questionable">
+                                <span class="player">Kawhi Leonard (LAC)</span>
+                                <span class="status">Questionable - Knee</span>
+                            </div>
+                            <div class="injury-item probable">
+                                <span class="player">Jayson Tatum (BOS)</span>
+                                <span class="status">Probable - Hip</span>
+                            </div>
+                            <div class="injury-item healthy">
+                                <span class="player">Jimmy Butler (MIA)</span>
+                                <span class="status">Healthy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/time-sync.js"></script>
+    <script src="js/sport-pages.js"></script>
+</body>
+</html>

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bookie Butcher - Baseball</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <i class="fas fa-utensils logo-icon"></i>
+                <span class="logo-text">The Bookie Butcher</span>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="live-betting.html" class="nav-link">Live Betting</a>
+                <a href="props.html" class="nav-link">Props</a>
+                <a href="football.html" class="nav-link">Football</a>
+                <a href="basketball.html" class="nav-link">Basketball</a>
+                <a href="baseball.html" class="nav-link active">
+                    <i class="fas fa-baseball-ball"></i>
+                    Baseball
+                </a>
+                <a href="combat-sports.html" class="nav-link">Combat</a>
+                <a href="bankroll-manager.html" class="nav-link">The Recipe</a>
+            </nav>
+            <div class="header-right">
+                <div class="clock-display">
+                    <span class="timezone-label">MCT</span>
+                    <span class="current-time" id="currentTime">10/29/2025 7:42:00 PM</span>
+                </div>
+                <div class="bankroll-summary">
+                    <span class="balance">$1,250.00</span>
+                    <span class="daily-pnl positive">+$127.50</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-header">
+        <div class="mobile-nav-container">
+            <div class="mobile-logo">
+                <i class="fas fa-baseball-ball"></i>
+                <span>Baseball</span>
+            </div>
+            <button class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-clock">
+            <span>MCT: <span id="mobileTime">10/29/2025 7:42:00 PM</span></span>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="menu-header">
+                <h3>Navigation</h3>
+                <button class="close-menu" id="closeMenu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a href="index.html" class="mobile-nav-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <a href="live-betting.html" class="mobile-nav-link">
+                    <i class="fas fa-play-circle"></i>
+                    Live Betting
+                </a>
+                <a href="props.html" class="mobile-nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    Props
+                </a>
+                <a href="football.html" class="mobile-nav-link">
+                    <i class="fas fa-football-ball"></i>
+                    Football
+                </a>
+                <a href="basketball.html" class="mobile-nav-link">
+                    <i class="fas fa-basketball-ball"></i>
+                    Basketball
+                </a>
+                <a href="baseball.html" class="mobile-nav-link active">
+                    <i class="fas fa-baseball-ball"></i>
+                    Baseball
+                </a>
+                <a href="combat-sports.html" class="mobile-nav-link">
+                    <i class="fas fa-fist-raised"></i>
+                    Combat Sports
+                </a>
+                <a href="bankroll-manager.html" class="mobile-nav-link">
+                    <i class="fas fa-chart-line"></i>
+                    The Recipe
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Baseball Header -->
+        <section class="sport-header">
+            <div class="container">
+                <div class="header-content">
+                    <h1 class="page-title">
+                        <i class="fas fa-baseball-ball"></i>
+                        Baseball
+                        <span class="subtitle">MLB Live Odds & Analytics</span>
+                    </h1>
+                    <div class="sport-stats">
+                        <div class="stat-item">
+                            <span class="label">Live Games:</span>
+                            <span class="value">2</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Edge Opportunities:</span>
+                            <span class="value positive">4</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">High Confidence:</span>
+                            <span class="value positive">2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Games Section -->
+        <section class="live-games-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Live Baseball Games</h2>
+                    <div class="data-source">
+                        <span class="source-label">Odds via:</span>
+                        <span class="source-name">BetMGM Reference</span>
+                    </div>
+                </div>
+
+                <div class="games-container">
+                    <!-- Game 1: MLB - LAD vs ATL -->
+                    <div class="game-card live" data-league="mlb">
+                        <div class="game-header">
+                            <div class="game-meta">
+                                <span class="league-badge mlb">MLB</span>
+                                <span class="game-time">Top 7th</span>
+                                <span class="referee">Ump: Jerry Meals</span>
+                            </div>
+                        </div>
+
+                        <div class="teams-section">
+                            <div class="team home">
+                                <span class="team-logo">🅰️</span>
+                                <span class="team-name">ATL</span>
+                                <span class="team-score">4</span>
+                            </div>
+                            <div class="vs-section">
+                                <span class="vs">vs</span>
+                            </div>
+                            <div class="team away">
+                                <span class="team-logo">🌟</span>
+                                <span class="team-name">LAD</span>
+                                <span class="team-score">3</span>
+                            </div>
+                        </div>
+
+                        <div class="odds-section">
+                            <div class="odds-row">
+                                <span class="odds-label">Run Line</span>
+                                <div class="odds-values">
+                                    <span class="odds-value">ATL -1.5 (+140)</span>
+                                    <span class="odds-value">LAD +1.5 (-160)</span>
+                                </div>
+                            </div>
+                            <div class="odds-row">
+                                <span class="odds-label">Moneyline</span>
+                                <div class="odds-values">
+                                    <span class="odds-value">ATL (-125)</span>
+                                    <span class="odds-value">LAD (+105)</span>
+                                </div>
+                            </div>
+                            <div class="odds-row">
+                                <span class="odds-label">Total</span>
+                                <div class="odds-values">
+                                    <span class="odds-value">O 8.5 (-110)</span>
+                                    <span class="odds-value">U 8.5 (-110)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="betting-actions">
+                            <button class="action-btn secondary">
+                                <i class="fas fa-chart-line"></i>
+                                Props
+                            </button>
+                            <button class="action-btn secondary">
+                                <i class="fas fa-info-circle"></i>
+                                Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Game 2: MLB - NYY vs HOU -->
+                    <div class="game-card live" data-league="mlb">
+                        <div class="game-header">
+                            <div class="game-meta">
+                                <span class="league-badge mlb">MLB</span>
+                                <span class="game-time">Bottom 6th</span>
+                                <span class="referee">Ump: Brian O'Nora</span>
+                            </div>
+                        </div>
+
+                        <div class="teams-section">
+                            <div class="team home">
+                                <span class="team-logo">⚾</span>
+                                <span class="team-name">NYY</span>
+                                <span class="team-score">2</span>
+                            </div>
+                            <div class="vs-section">
+                                <span class="vs">vs</span>
+                            </div>
+                            <div class="team away">
+                                <span class="team-logo">🚀</span>
+                                <span class="team-name">HOU</span>
+                                <span class="team-score">1</span>
+                            </div>
+                        </div>
+
+                        <div class="odds-section">
+                            <div class="odds-row">
+                                <span class="odds-label">Run Line</span>
+                                <div class="odds-values">
+                                    <span class="odds-value">NYY -1.5 (+115)</span>
+                                    <span class="odds-value">HOU +1.5 (-135)</span>
+                                </div>
+                            </div>
+                            <div class="odds-row">
+                                <span class="odds-label">Moneyline</span>
+                                <div class="odds-values">
+                                    <span class="odds-value">NYY (-105)</span>
+                                    <span class="odds-value">HOU (-115)</span>
+                                </div>
+                            </div>
+                            <div class="odds-row">
+                                <span class="odds-label">Total</span>
+                                <div class="odds-values">
+                                    <span class="odds-value">O 7.5 (-105)</span>
+                                    <span class="odds-value">U 7.5 (-115)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="betting-actions">
+                            <button class="action-btn secondary">
+                                <i class="fas fa-chart-line"></i>
+                                Props
+                            </button>
+                            <button class="action-btn secondary">
+                                <i class="fas fa-info-circle"></i>
+                                Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Baseball Props -->
+        <section class="sport-props">
+            <div class="container">
+                <h2>Top Baseball Props</h2>
+                <div class="props-grid">
+                    <div class="prop-card edge-high">
+                        <div class="prop-header">
+                            <span class="player">Shohei Ohtani</span>
+                            <span class="team">LAD</span>
+                            <span class="sport-badge mlb">MLB</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="stat-line">
+                                <span class="stat">Total Bases</span>
+                                <span class="line">1.5</span>
+                            </div>
+                            <div class="prediction">
+                                <span class="direction over">OVER</span>
+                                <span class="probability">72.4%</span>
+                            </div>
+                            <div class="edge">
+                                <span class="edge-value">+16.8% Edge</span>
+                                <span class="confidence">Very High</span>
+                            </div>
+                            <div class="formula">
+                                Hit rate: .347 | Expected TB: 1.6
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prop-card edge-medium">
+                        <div class="prop-header">
+                            <span class="player">Aaron Judge</span>
+                            <span class="team">NYY</span>
+                            <span class="sport-badge mlb">MLB</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="stat-line">
+                                <span class="stat">Hits</span>
+                                <span class="line">1.5</span>
+                            </div>
+                            <div class="prediction">
+                                <span class="direction over">OVER</span>
+                                <span class="probability">64.7%</span>
+                            </div>
+                            <div class="edge">
+                                <span class="edge-value">+9.1% Edge</span>
+                                <span class="confidence">Medium</span>
+                            </div>
+                            <div class="formula">
+                                Season avg: .311 | vs RHP: .328
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prop-card edge-high">
+                        <div class="prop-header">
+                            <span class="player">Ronald Acuna Jr.</span>
+                            <span class="team">ATL</span>
+                            <span class="sport-badge mlb">MLB</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="stat-line">
+                                <span class="stat">Runs + RBIs</span>
+                                <span class="line">2.5</span>
+                            </div>
+                            <div class="prediction">
+                                <span class="direction over">OVER</span>
+                                <span class="probability">69.2%</span>
+                            </div>
+                            <div class="edge">
+                                <span class="edge-value">+13.5% Edge</span>
+                                <span class="confidence">High</span>
+                            </div>
+                            <div class="formula">
+                                Leadoff + power | RBI opportunities: 3.2
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prop-card edge-medium">
+                        <div class="prop-header">
+                            <span class="player">Jose Altuve</span>
+                            <span class="team">HOU</span>
+                            <span class="sport-badge mlb">MLB</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="stat-line">
+                                <span class="stat">Total Bases</span>
+                                <span class="line">1.5</span>
+                            </div>
+                            <div class="prediction">
+                                <span class="direction under">UNDER</span>
+                                <span class="probability">61.3%</span>
+                            </div>
+                            <div class="edge">
+                                <span class="edge-value">+7.8% Edge</span>
+                                <span class="confidence">Medium</span>
+                            </div>
+                            <div class="formula">
+                                vs lefty: .267 avg | Cold streak: 3-12
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pitching Matchups -->
+        <section class="pitching-analysis">
+            <div class="container">
+                <h2>Pitching Matchups</h2>
+                <div class="pitching-grid">
+                    <div class="pitching-card">
+                        <h3>LAD vs ATL</h3>
+                        <div class="pitcher-details">
+                            <div class="pitcher-row">
+                                <div class="pitcher">
+                                    <span class="name">Walker Buehler (LAD)</span>
+                                    <span class="era">3.21 ERA</span>
+                                </div>
+                                <div class="matchup-stats">
+                                    <span class="stat">vs ATL: 2-1, 2.87 ERA</span>
+                                </div>
+                            </div>
+                            <div class="pitcher-row">
+                                <div class="pitcher">
+                                    <span class="name">Max Fried (ATL)</span>
+                                    <span class="era">2.98 ERA</span>
+                                </div>
+                                <div class="matchup-stats">
+                                    <span class="stat">vs LAD: 1-0, 1.29 ERA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bullpen-rating">
+                            <span class="label">Bullpen Advantage:</span>
+                            <span class="value positive">ATL (+0.8 runs saved)</span>
+                        </div>
+                    </div>
+
+                    <div class="pitching-card">
+                        <h3>NYY vs HOU</h3>
+                        <div class="pitcher-details">
+                            <div class="pitcher-row">
+                                <div class="pitcher">
+                                    <span class="name">Gerrit Cole (NYY)</span>
+                                    <span class="era">2.94 ERA</span>
+                                </div>
+                                <div class="matchup-stats">
+                                    <span class="stat">vs HOU: 3-2, 2.41 ERA</span>
+                                </div>
+                            </div>
+                            <div class="pitcher-row">
+                                <div class="pitcher">
+                                    <span class="name">Luis Garcia (HOU)</span>
+                                    <span class="era">4.12 ERA</span>
+                                </div>
+                                <div class="matchup-stats">
+                                    <span class="stat">vs NYY: 0-1, 6.75 ERA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bullpen-rating">
+                            <span class="label">Bullpen Advantage:</span>
+                            <span class="value positive">NYY (+1.2 runs saved)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weather & Umpire Zones -->
+        <section class="game-conditions">
+            <div class="container">
+                <h2>Game Conditions</h2>
+                <div class="conditions-grid">
+                    <div class="condition-card">
+                        <h3>Truist Park (LAD vs ATL)</h3>
+                        <div class="condition-details">
+                            <div class="condition-item">
+                                <i class="fas fa-thermometer-half"></i>
+                                <span>76°F - Clear</span>
+                            </div>
+                            <div class="condition-item">
+                                <i class="fas fa-wind"></i>
+                                <span>Wind: 8mph L → R</span>
+                            </div>
+                            <div class="condition-item">
+                                <i class="fas fa-baseball-ball"></i>
+                                <span>Umpire Zone: Pitcher-friendly</span>
+                            </div>
+                            <div class="condition-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Impact: +0.3 runs to total</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="condition-card">
+                        <h3>Yankee Stadium (NYY vs HOU)</h3>
+                        <div class="condition-details">
+                            <div class="condition-item">
+                                <i class="fas fa-thermometer-half"></i>
+                                <span>68°F - Partly Cloudy</span>
+                            </div>
+                            <div class="condition-item">
+                                <i class="fas fa-wind"></i>
+                                <span>Wind: 12mph L → CF</span>
+                            </div>
+                            <div class="condition-item">
+                                <i class="fas fa-baseball-ball"></i>
+                                <span>Umpire Zone: Hitter-friendly</span>
+                            </div>
+                            <div class="condition-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Impact: +0.7 runs to total</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Injury Reports -->
+        <section class="injury-reports">
+            <div class="container">
+                <h2>Baseball Injury Reports</h2>
+                <div class="injury-grid">
+                    <div class="injury-card">
+                        <h3>MLB Injuries</h3>
+                        <div class="injury-list">
+                            <div class="injury-item out">
+                                <span class="player">Mike Trout (LAA)</span>
+                                <span class="status">Out - Wrist Surgery</span>
+                            </div>
+                            <div class="injury-item questionable">
+                                <span class="player">Aaron Judge (NYY)</span>
+                                <span class="status">Questionable - Toe</span>
+                            </div>
+                            <div class="injury-item doubtful">
+                                <span class="player">Fernando Tatis Jr. (SD)</span>
+                                <span class="status">Doubtful - Wrist</span>
+                            </div>
+                            <div class="injury-item healthy">
+                                <span class="player">Shohei Ohtani (LAD)</span>
+                                <span class="status">Healthy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/time-sync.js"></script>
+    <script src="js/sport-pages.js"></script>
+</body>
+</html>

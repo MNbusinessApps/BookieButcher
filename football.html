@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bookie Butcher - Football</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <i class="fas fa-utensils logo-icon"></i>
+                <span class="logo-text">The Bookie Butcher</span>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="live-betting.html" class="nav-link">Live Betting</a>
+                <a href="props.html" class="nav-link">Props</a>
+                <a href="football.html" class="nav-link active">
+                    <i class="fas fa-football-ball"></i>
+                    Football
+                </a>
+                <a href="basketball.html" class="nav-link">Basketball</a>
+                <a href="baseball.html" class="nav-link">Baseball</a>
+                <a href="combat-sports.html" class="nav-link">Combat</a>
+                <a href="bankroll-manager.html" class="nav-link">The Recipe</a>
+            </nav>
+            <div class="header-right">
+                <div class="clock-display">
+                    <span class="timezone-label">MCT</span>
+                    <span class="current-time" id="currentTime">10/29/2025 7:42:00 PM</span>
+                </div>
+                <div class="bankroll-summary">
+                    <span class="balance">$1,250.00</span>
+                    <span class="daily-pnl positive">+$127.50</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-header">
+        <div class="mobile-nav-container">
+            <div class="mobile-logo">
+                <i class="fas fa-football-ball"></i>
+                <span>Football</span>
+            </div>
+            <button class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-clock">
+            <span>MCT: <span id="mobileTime">10/29/2025 7:42:00 PM</span></span>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="menu-header">
+                <h3>Navigation</h3>
+                <button class="close-menu" id="closeMenu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a href="index.html" class="mobile-nav-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <a href="live-betting.html" class="mobile-nav-link">
+                    <i class="fas fa-play-circle"></i>
+                    Live Betting
+                </a>
+                <a href="props.html" class="mobile-nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    Props
+                </a>
+                <a href="football.html" class="mobile-nav-link active">
+                    <i class="fas fa-football-ball"></i>
+                    Football
+                </a>
+                <a href="basketball.html" class="mobile-nav-link">
+                    <i class="fas fa-basketball-ball"></i>
+                    Basketball
+                </a>
+                <a href="baseball.html" class="mobile-nav-link">
+                    <i class="fas fa-baseball-ball"></i>
+                    Baseball
+                </a>
+                <a href="combat-sports.html" class="mobile-nav-link">
+                    <i class="fas fa-fist-raised"></i>
+                    Combat Sports
+                </a>
+                <a href="bankroll-manager.html" class="mobile-nav-link">
+                    <i class="fas fa-chart-line"></i>
+                    The Recipe
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Football Header -->
+        <section class="sport-header">
+            <div class="container">
+                <div class="header-content">
+                    <h1 class="page-title">
+                        <i class="fas fa-football-ball"></i>
+                        Football
+                        <span class="subtitle">NFL & College Football Live Odds</span>
+                    </h1>
+                    <div class="sport-stats">
+                        <div class="stat-item">
+                            <span class="label">Live Games:</span>
+                            <span class="value">3</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Edge Opportunities:</span>
+                            <span class="value positive">8</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Flip Alerts:</span>
+                            <span class="value alert">2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Games Section -->
+        <section class="live-games-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Live Football Games</h2>
+                    <div class="data-source">
+                        <span class="source-label">Odds via:</span>
+                        <span class="source-name">BetMGM Reference</span>
+                    </div>
+                </div>
+
+                <div class="games-container">
+                    <!-- Game 1: NFL - DET vs CHI (FLIP ALERT) -->
+                    <div class="game-card live flip-alert" data-league="nfl">
+                        <div class="game-header">
+                            <div class="game-meta">
+                                <span class="league-badge nfl">NFL</span>
+                                <span class="game-time">4Q 2:34</span>
+                                <span class="referee">Ref: Brad Allen</span>
+                            </div>
+                            <div class="flip-indicator active">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>FLIP ALERT</span>
+                            </div>
+                        </div>
+
+                        <div class="teams-section">
+                            <div class="team home">
+                                <span class="team-logo">🦁</span>
+                                <span class="team-name">DET</span>
+                                <span class="team-score">21</span>
+                            </div>
+                            <div class="vs-section">
+                                <span class="vs">vs</span>
+                            </div>
+                            <div class="team away">
+                                <span class="team-logo">🐻</span>
+                                <span class="team-name">CHI</span>
+                                <span class="team-score">17</span>
+                            </div>
+                        </div>
+
+                        <div class="odds-section">
+                            <div class="odds-row">
+                                <span class="odds-label">Spread</span>
+                                <div class="odds-values">
+                                    <span class="odds-value">DET -3.5 (-110)</span>
+                                    <span class="odds-value">CHI +3.5 (-110)</span>
+                                </div>
+                            </div>
+                            <div class="odds-row highlight">
+                                <span class="odds-label">Moneyline</span>
+                                <div class="odds-values">
+                                    <span class="odds-value original">CHI -205 → CHI +185</span>
+                                    <span class="edge-indicator">+15.2% Edge</span>
+                                </div>
+                            </div>
+                            <div class="odds-row">
+                                <span class="odds-label">Total</span>
+                                <div class="odds-values">
+                                    <span class="odds-value">O 47.5 (-108)</span>
+                                    <span class="odds-value">U 47.5 (-112)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="betting-actions">
+                            <button class="action-btn primary">
+                                <i class="fas fa-coins"></i>
+                                Bet CHI ML +185
+                            </button>
+                            <button class="action-btn secondary">
+                                <i class="fas fa-chart-line"></i>
+                                Props
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Game 2: NFL - DAL vs PHI -->
+                    <div class="game-card live" data-league="nfl">
+                        <div class="game-header">
+                            <div class="game-meta">
+                                <span class="league-badge nfl">NFL</span>
+                                <span class="game-time">3Q 8:12</span>
+                                <span class="referee">Ref: Carl Cheffers</span>
+                            </div>
+                        </div>
+
+                        <div class="teams-section">
+                            <div class="team home">
+                                <span class="team-logo">🐴</span>
+                                <span class="team-name">DAL</span>
+                                <span class="team-score">14</span>
+                            </div>
+                            <div class="vs-section">
+                                <span class="vs">vs</span>
+                            </div>
+                            <div class="team away">
+                                <span class="team-logo">🦅</span>
+                                <span class="team-name">PHI</span>
+                                <span class="team-score">21</span>
+                            </div>
+                        </div>
+
+                        <div class="odds-section">
+                            <div class="odds-row">
+                                <span class="odds-label">Spread</span>
+                                <div class="odds-values">
+                                    <span class="odds-value">PHI -6.5 (-105)</span>
+                                    <span class="odds-value">DAL +6.5 (-115)</span>
+                                </div>
+                            </div>
+                            <div class="odds-row">
+                                <span class="odds-label">Moneyline</span>
+                                <div class="odds-values">
+                                    <span class="odds-value">PHI (-250)</span>
+                                    <span class="odds-value">DAL (+210)</span>
+                                </div>
+                            </div>
+                            <div class="odds-row">
+                                <span class="odds-label">Total</span>
+                                <div class="odds-values">
+                                    <span class="odds-value">O 48.5 (-108)</span>
+                                    <span class="odds-value">U 48.5 (-112)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="betting-actions">
+                            <button class="action-btn secondary">
+                                <i class="fas fa-chart-line"></i>
+                                Props
+                            </button>
+                            <button class="action-btn secondary">
+                                <i class="fas fa-info-circle"></i>
+                                Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Game 3: College - Alabama vs LSU -->
+                    <div class="game-card live" data-league="college">
+                        <div class="game-header">
+                            <div class="game-meta">
+                                <span class="league-badge college">CFB</span>
+                                <span class="game-time">2Q 3:45</span>
+                                <span class="referee">Ref: Steve Freeman</span>
+                            </div>
+                        </div>
+
+                        <div class="teams-section">
+                            <div class="team home">
+                                <span class="team-logo">🔥</span>
+                                <span class="team-name">LSU</span>
+                                <span class="team-score">14</span>
+                            </div>
+                            <div class="vs-section">
+                                <span class="vs">vs</span>
+                            </div>
+                            <div class="team away">
+                                <span class="team-logo">🐘</span>
+                                <span class="team-name">BAMA</span>
+                                <span class="team-score">21</span>
+                            </div>
+                        </div>
+
+                        <div class="odds-section">
+                            <div class="odds-row">
+                                <span class="odds-label">Spread</span>
+                                <div class="odds-values">
+                                    <span class="odds-value">BAMA -7.5 (-110)</span>
+                                    <span class="odds-value">LSU +7.5 (-110)</span>
+                                </div>
+                            </div>
+                            <div class="odds-row">
+                                <span class="odds-label">Moneyline</span>
+                                <div class="odds-values">
+                                    <span class="odds-value">BAMA (-320)</span>
+                                    <span class="odds-value">LSU (+260)</span>
+                                </div>
+                            </div>
+                            <div class="odds-row">
+                                <span class="odds-label">Total</span>
+                                <div class="odds-values">
+                                    <span class="odds-value">O 58.5 (-105)</span>
+                                    <span class="odds-value">U 58.5 (-115)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="betting-actions">
+                            <button class="action-btn secondary">
+                                <i class="fas fa-chart-line"></i>
+                                Props
+                            </button>
+                            <button class="action-btn secondary">
+                                <i class="fas fa-info-circle"></i>
+                                Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Football Props -->
+        <section class="sport-props">
+            <div class="container">
+                <h2>Top Football Props</h2>
+                <div class="props-grid">
+                    <div class="prop-card edge-high">
+                        <div class="prop-header">
+                            <span class="player">Josh Allen</span>
+                            <span class="team">BUF</span>
+                            <span class="sport-badge nfl">NFL</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="stat-line">
+                                <span class="stat">Passing Yards</span>
+                                <span class="line">265.5</span>
+                            </div>
+                            <div class="prediction">
+                                <span class="direction over">OVER</span>
+                                <span class="probability">61.2%</span>
+                            </div>
+                            <div class="edge">
+                                <span class="edge-value">+12.4% Edge</span>
+                                <span class="confidence">High</span>
+                            </div>
+                            <div class="formula">
+                                Historical: 278.3 avg | Recent trend +8.7%
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prop-card edge-medium">
+                        <div class="prop-header">
+                            <span class="player">Cooper Kupp</span>
+                            <span class="team">LAR</span>
+                            <span class="sport-badge nfl">NFL</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="stat-line">
+                                <span class="stat">Receptions</span>
+                                <span class="line">6.5</span>
+                            </div>
+                            <div class="prediction">
+                                <span class="direction over">OVER</span>
+                                <span class="probability">64.8%</span>
+                            </div>
+                            <div class="edge">
+                                <span class="edge-value">+8.9% Edge</span>
+                                <span class="confidence">Medium</span>
+                            </div>
+                            <div class="formula">
+                                Last 5: 7.4 avg | Target share 28.3%
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prop-card edge-high">
+                        <div class="prop-header">
+                            <span class="player">C.J. Stroud</span>
+                            <span class="team">HOU</span>
+                            <span class="sport-badge college">CFB</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="stat-line">
+                                <span class="stat">Passing TDs</span>
+                                <span class="line">2.5</span>
+                            </div>
+                            <div class="prediction">
+                                <span class="direction over">OVER</span>
+                                <span class="probability">67.3%</span>
+                            </div>
+                            <div class="edge">
+                                <span class="edge-value">+14.1% Edge</span>
+                                <span class="confidence">High</span>
+                            </div>
+                            <div class="formula">
+                                Season avg: 2.8 | Opp allows 3.1/game
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weather & Conditions -->
+        <section class="game-conditions">
+            <div class="container">
+                <h2>Game Conditions</h2>
+                <div class="conditions-grid">
+                    <div class="condition-card">
+                        <h3>Ford Field (DET vs CHI)</h3>
+                        <div class="condition-details">
+                            <div class="condition-item">
+                                <i class="fas fa-thermometer-half"></i>
+                                <span>72°F - Indoor (Climate Controlled)</span>
+                            </div>
+                            <div class="condition-item">
+                                <i class="fas fa-wind"></i>
+                                <span>No Wind Factor</span>
+                            </div>
+                            <div class="condition-item">
+                                <i class="fas fa-cloud"></i>
+                                <span>Dome Game - No Weather Impact</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="condition-card">
+                        <h3>AT&T Stadium (DAL vs PHI)</h3>
+                        <div class="condition-details">
+                            <div class="condition-item">
+                                <i class="fas fa-thermometer-half"></i>
+                                <span>68°F - Indoor (Climate Controlled)</span>
+                            </div>
+                            <div class="condition-item">
+                                <i class="fas fa-wind"></i>
+                                <span>No Wind Factor</span>
+                            </div>
+                            <div class="condition-item">
+                                <i class="fas fa-cloud"></i>
+                                <span>Dome Game - No Weather Impact</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/time-sync.js"></script>
+    <script src="js/sport-pages.js"></script>
+</body>
+</html>

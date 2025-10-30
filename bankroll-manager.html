@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bookie Butcher - The Recipe (Bankroll Manager)</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <i class="fas fa-utensils logo-icon"></i>
+                <span class="logo-text">The Bookie Butcher</span>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="live-betting.html" class="nav-link">Live Betting</a>
+                <a href="props.html" class="nav-link">Props</a>
+                <a href="football.html" class="nav-link">Football</a>
+                <a href="basketball.html" class="nav-link">Basketball</a>
+                <a href="baseball.html" class="nav-link">Baseball</a>
+                <a href="combat-sports.html" class="nav-link">Combat</a>
+                <a href="bankroll-manager.html" class="nav-link active">
+                    <i class="fas fa-chart-line"></i>
+                    The Recipe
+                </a>
+            </nav>
+            <div class="header-right">
+                <div class="clock-display">
+                    <span class="timezone-label">MCT</span>
+                    <span class="current-time" id="currentTime">10/29/2025 7:42:00 PM</span>
+                </div>
+                <div class="bankroll-summary">
+                    <span class="balance">$1,250.00</span>
+                    <span class="daily-pnl positive">+$127.50</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-header">
+        <div class="mobile-nav-container">
+            <div class="mobile-logo">
+                <i class="fas fa-chart-line"></i>
+                <span>The Recipe</span>
+            </div>
+            <button class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-clock">
+            <span>MCT: <span id="mobileTime">10/29/2025 7:42:00 PM</span></span>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="menu-header">
+                <h3>Navigation</h3>
+                <button class="close-menu" id="closeMenu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a href="index.html" class="mobile-nav-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <a href="live-betting.html" class="mobile-nav-link">
+                    <i class="fas fa-play-circle"></i>
+                    Live Betting
+                </a>
+                <a href="props.html" class="mobile-nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    Props
+                </a>
+                <a href="football.html" class="mobile-nav-link">
+                    <i class="fas fa-football-ball"></i>
+                    Football
+                </a>
+                <a href="basketball.html" class="mobile-nav-link">
+                    <i class="fas fa-basketball-ball"></i>
+                    Basketball
+                </a>
+                <a href="baseball.html" class="mobile-nav-link">
+                    <i class="fas fa-baseball-ball"></i>
+                    Baseball
+                </a>
+                <a href="combat-sports.html" class="mobile-nav-link">
+                    <i class="fas fa-fist-raised"></i>
+                    Combat Sports
+                </a>
+                <a href="bankroll-manager.html" class="mobile-nav-link active">
+                    <i class="fas fa-chart-line"></i>
+                    The Recipe
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Recipe Header -->
+        <section class="recipe-header">
+            <div class="container">
+                <div class="header-content">
+                    <h1 class="page-title">
+                        <i class="fas fa-chart-line"></i>
+                        The Recipe
+                        <span class="subtitle">Bankroll Management & ROI Analytics</span>
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Metrics -->
+        <section class="key-metrics">
+            <div class="container">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <i class="fas fa-wallet"></i>
+                            <span>Total Bankroll</span>
+                        </div>
+                        <div class="metric-value">$1,250.00</div>
+                        <div class="metric-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            +$127.50 today (+11.35%)
+                        </div>
+                        <div class="metric-details">
+                            <span class="detail">Starting: $1,122.50</span>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <i class="fas fa-coins"></i>
+                            <span>Bet Units</span>
+                        </div>
+                        <div class="metric-value">1.25 Units</div>
+                        <div class="metric-change neutral">
+                            Standard: 1 Unit = $50
+                        </div>
+                        <div class="metric-details">
+                            <span class="detail">Kelly Criterion: 2.1%</span>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <i class="fas fa-percentage"></i>
+                            <span>ROI</span>
+                        </div>
+                        <div class="metric-value">+8.7%</div>
+                        <div class="metric-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            +2.1% vs last week
+                        </div>
+                        <div class="metric-details">
+                            <span class="detail">23 winning bets / 34 total</span>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <i class="fas fa-target"></i>
+                            <span>Win Rate</span>
+                        </div>
+                        <div class="metric-value">67.6%</div>
+                        <div class="metric-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            Above target (60%)
+                        </div>
+                        <div class="metric-details">
+                            <span class="detail">Target: 60% for +EV bets</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Growth Chart -->
+        <section class="growth-chart-section">
+            <div class="container">
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h2>Bankroll Growth Trajectory</h2>
+                        <div class="chart-controls">
+                            <button class="chart-btn active" data-period="7d">7D</button>
+                            <button class="chart-btn" data-period="30d">30D</button>
+                            <button class="chart-btn" data-period="90d">90D</button>
+                            <button class="chart-btn" data-period="1y">1Y</button>
+                        </div>
+                    </div>
+                    <div class="chart-wrapper">
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Betting Strategy -->
+        <section class="betting-strategy">
+            <div class="container">
+                <div class="strategy-grid">
+                    <div class="strategy-card">
+                        <h3>Current Strategy</h3>
+                        <div class="strategy-details">
+                            <div class="strategy-item">
+                                <span class="label">Risk Level:</span>
+                                <span class="value moderate">Moderate</span>
+                            </div>
+                            <div class="strategy-item">
+                                <span class="label">Max Unit Size:</span>
+                                <span class="value">2.5 units (conservative)</span>
+                            </div>
+                            <div class="strategy-item">
+                                <span class="label">Target Edge:</span>
+                                <span class="value">+5% minimum</span>
+                            </div>
+                            <div class="strategy-item">
+                                <span class="label">Sharpe Ratio:</span>
+                                <span class="value">1.23 (excellent)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="strategy-card">
+                        <h3>Performance Analysis</h3>
+                        <div class="performance-metrics">
+                            <div class="perf-metric">
+                                <span class="metric-label">Average Edge:</span>
+                                <span class="metric-value">+7.8%</span>
+                            </div>
+                            <div class="perf-metric">
+                                <span class="metric-label">Best Day:</span>
+                                <span class="metric-value">+$215 (Oct 15)</span>
+                            </div>
+                            <div class="perf-metric">
+                                <span class="metric-label">Worst Day:</span>
+                                <span class="metric-value">-$89 (Oct 8)</span>
+                            </div>
+                            <div class="perf-metric">
+                                <span class="metric-label">Consecutive Wins:</span>
+                                <span class="metric-value">8 (current streak)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Bets -->
+        <section class="recent-bets">
+            <div class="container">
+                <div class="bets-header">
+                    <h2>Recent Bets Performance</h2>
+                    <div class="bets-controls">
+                        <select id="sportFilter">
+                            <option value="all">All Sports</option>
+                            <option value="nfl">NFL</option>
+                            <option value="nba">NBA</option>
+                            <option value="mlb">MLB</option>
+                        </select>
+                        <select id="outcomeFilter">
+                            <option value="all">All Outcomes</option>
+                            <option value="wins">Wins Only</option>
+                            <option value="losses">Losses Only</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="bets-table-container">
+                    <table class="bets-table">
+                        <thead>
+                            <tr>
+                                <th>Date/Time</th>
+                                <th>Bet</th>
+                                <th>Sport</th>
+                                <th>Odds</th>
+                                <th>Edge</th>
+                                <th>Stake</th>
+                                <th>P&L</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="win">
+                                <td>10/29 7:15 PM</td>
+                                <td>CHI +3.5</td>
+                                <td>NFL</td>
+                                <td>+185 (flip)</td>
+                                <td class="edge">+15.2%</td>
+                                <td>2.0u ($100)</td>
+                                <td class="pnl positive">+$185</td>
+                                <td class="status won">WON</td>
+                            </tr>
+                            <tr class="win">
+                                <td>10/29 6:42 PM</td>
+                                <td>Jokic O22.5 Reb+Ast</td>
+                                <td>NBA</td>
+                                <td>-110</td>
+                                <td class="edge">+14.7%</td>
+                                <td>1.5u ($75)</td>
+                                <td class="pnl positive">+$68.18</td>
+                                <td class="status won">WON</td>
+                            </tr>
+                            <tr class="win">
+                                <td>10/29 5:30 PM</td>
+                                <td>Allen O265.5 Pass Yds</td>
+                                <td>NFL</td>
+                                <td>+105</td>
+                                <td class="edge">+12.4%</td>
+                                <td>1.25u ($62.50)</td>
+                                <td class="pnl positive">+$65.63</td>
+                                <td class="status won">WON</td>
+                            </tr>
+                            <tr class="pending">
+                                <td>10/29 8:00 PM</td>
+                                <td>Ohtani O1.5 TB</td>
+                                <td>MLB</td>
+                                <td>+115</td>
+                                <td class="edge">+16.8%</td>
+                                <td>2.0u ($100)</td>
+                                <td class="pnl">$0</td>
+                                <td class="status pending">PENDING</td>
+                            </tr>
+                            <tr class="loss">
+                                <td>10/28 9:15 PM</td>
+                                <td>Lakers ML</td>
+                                <td>NBA</td>
+                                <td>-120</td>
+                                <td class="edge">+3.2%</td>
+                                <td>1.0u ($50)</td>
+                                <td class="pnl negative">-$50</td>
+                                <td class="status lost">LOST</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Risk Management -->
+        <section class="risk-management">
+            <div class="container">
+                <h2>Risk Management Rules</h2>
+                <div class="rules-grid">
+                    <div class="rule-card">
+                        <div class="rule-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Kelly Criterion</h3>
+                        <p>Bet size determined by edge percentage and odds. Never exceed 2.5% of bankroll on single bet.</p>
+                        <div class="rule-example">
+                            Example: +10% edge at +110 = 1.8 units
+                        </div>
+                    </div>
+
+                    <div class="rule-card">
+                        <div class="rule-icon">
+                            <i class="fas fa-stopwatch"></i>
+                        </div>
+                        <h3>Stop Loss</h3>
+                        <p>Daily loss limit of -5 units (25% of bankroll). Take break after hitting limit.</p>
+                        <div class="rule-example">
+                            Today's limit: $250 | Current: -$127.50
+                        </div>
+                    </div>
+
+                    <div class="rule-card">
+                        <div class="rule-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Win Targets</h3>
+                        <p>Target +3 units daily. Stop betting after reaching target to preserve profits.</p>
+                        <div class="rule-example">
+                            Target: +$150 | Current: +$127.50
+                        </div>
+                    </div>
+
+                    <div class="rule-card">
+                        <div class="rule-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3>Diversification</h3>
+                        <p>Max 40% of bets on single sport. Spread risk across multiple markets.</p>
+                        <div class="rule-example">
+                            Current: NFL 35% | NBA 30% | MLB 25% | Other 10%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/time-sync.js"></script>
+    <script src="js/bankroll-manager.js"></script>
+</body>
+</html>

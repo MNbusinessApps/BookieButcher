@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bookie Butcher - Live Betting</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <i class="fas fa-utensils logo-icon"></i>
+                <span class="logo-text">The Bookie Butcher</span>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="live-betting.html" class="nav-link active">Live Betting</a>
+                <a href="props.html" class="nav-link">Props</a>
+                <a href="football.html" class="nav-link">Football</a>
+                <a href="basketball.html" class="nav-link">Basketball</a>
+                <a href="baseball.html" class="nav-link">Baseball</a>
+                <a href="combat-sports.html" class="nav-link">Combat</a>
+                <a href="bankroll-manager.html" class="nav-link">The Recipe</a>
+            </nav>
+            <div class="header-right">
+                <div class="clock-display">
+                    <span class="timezone-label">MCT</span>
+                    <span class="current-time" id="currentTime">10/29/2025 7:42:00 PM</span>
+                </div>
+                <div class="bankroll-summary">
+                    <span class="balance">$1,250.00</span>
+                    <span class="daily-pnl positive">+$127.50</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-header">
+        <div class="mobile-nav-container">
+            <div class="mobile-logo">
+                <i class="fas fa-utensils"></i>
+                <span>Live Betting</span>
+            </div>
+            <button class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-clock">
+            <span>MCT: <span id="mobileTime">10/29/2025 7:42:00 PM</span></span>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="menu-header">
+                <h3>Navigation</h3>
+                <button class="close-menu" id="closeMenu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a href="index.html" class="mobile-nav-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <a href="live-betting.html" class="mobile-nav-link active">
+                    <i class="fas fa-play-circle"></i>
+                    Live Betting
+                </a>
+                <a href="props.html" class="mobile-nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    Props
+                </a>
+                <a href="football.html" class="mobile-nav-link">
+                    <i class="fas fa-football-ball"></i>
+                    Football
+                </a>
+                <a href="basketball.html" class="mobile-nav-link">
+                    <i class="fas fa-basketball-ball"></i>
+                    Basketball
+                </a>
+                <a href="baseball.html" class="mobile-nav-link">
+                    <i class="fas fa-baseball-ball"></i>
+                    Baseball
+                </a>
+                <a href="combat-sports.html" class="mobile-nav-link">
+                    <i class="fas fa-fist-raised"></i>
+                    Combat Sports
+                </a>
+                <a href="bankroll-manager.html" class="mobile-nav-link">
+                    <i class="fas fa-chart-line"></i>
+                    The Recipe
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Live Alert Banner -->
+        <section class="alert-banner">
+            <div class="container">
+                <div class="alert-content">
+                    <i class="fas fa-bell alert-icon"></i>
+                    <span class="alert-text">
+                        <strong>2 Active Flip Alerts</strong> - Monitor -200 favorites turning to underdogs
+                    </span>
+                    <button class="alert-action">View Alerts</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Games Section -->
+        <section class="live-games-section">
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="page-title">
+                        <i class="fas fa-play-circle"></i>
+                        Live Games
+                    </h1>
+                    <div class="section-controls">
+                        <div class="data-source">
+                            <span class="source-label">Odds via:</span>
+                            <span class="source-name">BetMGM Reference</span>
+                        </div>
+                        <div class="last-update">
+                            <span>Updated: <span class="update-time">Just Now</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sport Tabs -->
+                <div class="sport-tabs">
+                    <button class="sport-tab active" data-sport="all">
+                        All Sports <span class="count">8</span>
+                    </button>
+                    <button class="sport-tab" data-sport="nfl">
+                        NFL <span class="count">3</span>
+                    </button>
+                    <button class="sport-tab" data-sport="nba">
+                        NBA <span class="count">2</span>
+                    </button>
+                    <button class="sport-tab" data-sport="mlb">
+                        MLB <span class="count">2</span>
+                    </button>
+                    <button class="sport-tab" data-sport="nhl">
+                        NHL <span class="count">1</span>
+                    </button>
+                </div>
+
+                <!-- Live Games Grid -->
+                <div class="games-container">
+                    <!-- Game 1: NFL - DET vs CHI (FLIP ALERT) -->
+                    <div class="live-game-card flip-alert" data-sport="nfl" data-game-id="det_chi">
+                        <div class="game-header">
+                            <div class="game-meta">
+                                <span class="sport-badge nfl">NFL</span>
+                                <span class="game-time live">4Q 2:34</span>
+                                <span class="referee">Ref: Brad Allen</span>
+                            </div>
+                            <div class="flip-indicator active">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>FLIP ALERT</span>
+                            </div>
+                        </div>
+                        
+                        <div class="teams-section">
+                            <div class="team home">
+                                <span class="team-name">DET</span>
+                                <span class="team-score">21</span>
+                            </div>
+                            <div class="vs-section">
+                                <span class="vs">vs</span>
+                            </div>
+                            <div class="team away">
+                                <span class="team-name">CHI</span>
+                                <span class="team-score">17</span>
+                            </div>
+                        </div>
+
+                        <div class="odds-section">
+                            <div class="odds-grid">
+                                <div class="odds-item">
+                                    <span class="odds-label">Spread</span>
+                                    <div class="odds-values">
+                                        <span class="odds-value">DET -3.5 (-110)</span>
+                                        <span class="odds-value">CHI +3.5 (-110)</span>
+                                    </div>
+                                </div>
+                                <div class="odds-item highlight">
+                                    <span class="odds-label">Moneyline</span>
+                                    <div class="odds-values flip-odds">
+                                        <span class="odds-value original">-205 → +185</span>
+                                        <span class="edge-indicator">+15.2% Edge</span>
+                                    </div>
+                                </div>
+                                <div class="odds-item">
+                                    <span class="odds-label">Total</span>
+                                    <div class="odds-values">
+                                        <span class="odds-value">O 47.5 (-108)</span>
+                                        <span class="odds-value">U 47.5 (-112)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="game-actions">
+                            <button class="action-btn primary">
+                                <i class="fas fa-coins"></i>
+                                Bet CHI ML
+                            </button>
+                            <button class="action-btn secondary">
+                                <i class="fas fa-info-circle"></i>
+                                Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Game 2: NFL - DAL vs PHI -->
+                    <div class="live-game-card" data-sport="nfl" data-game-id="dal_phi">
+                        <div class="game-header">
+                            <div class="game-meta">
+                                <span class="sport-badge nfl">NFL</span>
+                                <span class="game-time live">3Q 8:12</span>
+                                <span class="referee">Ref: Carl Cheffers</span>
+                            </div>
+                        </div>
+                        
+                        <div class="teams-section">
+                            <div class="team home">
+                                <span class="team-name">DAL</span>
+                                <span class="team-score">14</span>
+                            </div>
+                            <div class="vs-section">
+                                <span class="vs">vs</span>
+                            </div>
+                            <div class="team away">
+                                <span class="team-name">PHI</span>
+                                <span class="team-score">21</span>
+                            </div>
+                        </div>
+
+                        <div class="odds-section">
+                            <div class="odds-grid">
+                                <div class="odds-item">
+                                    <span class="odds-label">Spread</span>
+                                    <div class="odds-values">
+                                        <span class="odds-value">PHI -6.5 (-105)</span>
+                                        <span class="odds-value">DAL +6.5 (-115)</span>
+                                    </div>
+                                </div>
+                                <div class="odds-item">
+                                    <span class="odds-label">Moneyline</span>
+                                    <div class="odds-values">
+                                        <span class="odds-value">PHI (-250)</span>
+                                        <span class="odds-value">DAL (+210)</span>
+                                    </div>
+                                </div>
+                                <div class="odds-item">
+                                    <span class="odds-label">Total</span>
+                                    <div class="odds-values">
+                                        <span class="odds-value">O 48.5 (-108)</span>
+                                        <span class="odds-value">U 48.5 (-112)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="game-actions">
+                            <button class="action-btn secondary">
+                                <i class="fas fa-chart-line"></i>
+                                View Props
+                            </button>
+                            <button class="action-btn secondary">
+                                <i class="fas fa-info-circle"></i>
+                                Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Game 3: NBA - LAL vs LAC -->
+                    <div class="live-game-card" data-sport="nba" data-game-id="lal_lac">
+                        <div class="game-header">
+                            <div class="game-meta">
+                                <span class="sport-badge nba">NBA</span>
+                                <span class="game-time live">2Q 6:45</span>
+                                <span class="referee">Ref: Marc Davis</span>
+                            </div>
+                        </div>
+                        
+                        <div class="teams-section">
+                            <div class="team home">
+                                <span class="team-name">LAL</span>
+                                <span class="team-score">68</span>
+                            </div>
+                            <div class="vs-section">
+                                <span class="vs">vs</span>
+                            </div>
+                            <div class="team away">
+                                <span class="team-name">LAC</span>
+                                <span class="team-score">72</span>
+                            </div>
+                        </div>
+
+                        <div class="odds-section">
+                            <div class="odds-grid">
+                                <div class="odds-item">
+                                    <span class="odds-label">Spread</span>
+                                    <div class="odds-values">
+                                        <span class="odds-value">LAC -2.5 (-108)</span>
+                                        <span class="odds-value">LAL +2.5 (-112)</span>
+                                    </div>
+                                </div>
+                                <div class="odds-item">
+                                    <span class="odds-label">Moneyline</span>
+                                    <div class="odds-values">
+                                        <span class="odds-value">LAC (-135)</span>
+                                        <span class="odds-value">LAL (+115)</span>
+                                    </div>
+                                </div>
+                                <div class="odds-item">
+                                    <span class="odds-label">Total</span>
+                                    <div class="odds-values">
+                                        <span class="odds-value">O 226.5 (-110)</span>
+                                        <span class="odds-value">U 226.5 (-110)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="game-actions">
+                            <button class="action-btn secondary">
+                                <i class="fas fa-chart-line"></i>
+                                View Props
+                            </button>
+                            <button class="action-btn secondary">
+                                <i class="fas fa-info-circle"></i>
+                                Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Game 4: MLB - LAD vs ATL -->
+                    <div class="live-game-card" data-sport="mlb" data-game-id="lad_atl">
+                        <div class="game-header">
+                            <div class="game-meta">
+                                <span class="sport-badge mlb">MLB</span>
+                                <span class="game-time live">Top 7th</span>
+                                <span class="referee">Ump: Jerry Meals</span>
+                            </div>
+                        </div>
+                        
+                        <div class="teams-section">
+                            <div class="team home">
+                                <span class="team-name">ATL</span>
+                                <span class="team-score">4</span>
+                            </div>
+                            <div class="vs-section">
+                                <span class="vs">vs</span>
+                            </div>
+                            <div class="team away">
+                                <span class="team-name">LAD</span>
+                                <span class="team-score">3</span>
+                            </div>
+                        </div>
+
+                        <div class="odds-section">
+                            <div class="odds-grid">
+                                <div class="odds-item">
+                                    <span class="odds-label">Run Line</span>
+                                    <div class="odds-values">
+                                        <span class="odds-value">ATL -1.5 (+140)</span>
+                                        <span class="odds-value">LAD +1.5 (-160)</span>
+                                    </div>
+                                </div>
+                                <div class="odds-item">
+                                    <span class="odds-label">Moneyline</span>
+                                    <div class="odds-values">
+                                        <span class="odds-value">ATL (-125)</span>
+                                        <span class="odds-value">LAD (+105)</span>
+                                    </div>
+                                </div>
+                                <div class="odds-item">
+                                    <span class="odds-label">Total</span>
+                                    <div class="odds-values">
+                                        <span class="odds-value">O 8.5 (-110)</span>
+                                        <span class="odds-value">U 8.5 (-110)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="game-actions">
+                            <button class="action-btn secondary">
+                                <i class="fas fa-chart-line"></i>
+                                View Props
+                            </button>
+                            <button class="action-btn secondary">
+                                <i class="fas fa-info-circle"></i>
+                                Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/time-sync.js"></script>
+    <script src="js/live-betting.js"></script>
+</body>
+</html>

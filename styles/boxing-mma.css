@@ -1,0 +1,678 @@
+/* Boxing & MMA Specific Styles */
+
+/* Page Layout */
+.fighter-selection {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--space-xl);
+}
+
+.page-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-sm);
+    text-align: center;
+}
+
+.page-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-xxl);
+    text-align: center;
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--primary-500);
+}
+
+.back-link i {
+    font-size: 16px;
+}
+
+/* Sport Toggle */
+.sport-toggle {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xxl);
+}
+
+.sport-toggle-btn {
+    padding: var(--space-md) var(--space-xl);
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sport-toggle-btn.active {
+    background-color: var(--primary-500);
+    color: white;
+    border-color: var(--primary-500);
+}
+
+.sport-toggle-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-500);
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+/* Upcoming Fights */
+.upcoming-fights h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xl);
+}
+
+.fight-cards {
+    display: grid;
+    gap: var(--space-xl);
+}
+
+.fight-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    transition: all 0.3s ease;
+}
+
+.fight-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-500);
+    box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.fight-main {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+    margin-bottom: var(--space-xl);
+}
+
+.fighter {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.fighter-a {
+    justify-self: start;
+    text-align: right;
+}
+
+.fighter-b {
+    justify-self: end;
+    text-align: left;
+}
+
+.fighter-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--border-default);
+}
+
+.fighter-info h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+}
+
+.fighter-info .record {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-sm);
+}
+
+.physical {
+    display: flex;
+    gap: var(--space-sm);
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.vs-section {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-default);
+}
+
+.vs-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-500);
+    margin-bottom: var(--space-sm);
+}
+
+.fight-time {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.venue {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* Fight Details */
+.fight-details {
+    margin-bottom: var(--space-xl);
+}
+
+.odds-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.odds-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-default);
+}
+
+.referee-info h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+    color: var(--text-primary);
+}
+
+.ref-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+}
+
+.ref-details span:first-child {
+    color: var(--text-primary);
+}
+
+.tendency {
+    color: var(--text-secondary);
+}
+
+.analyze-fight-btn {
+    width: 100%;
+    padding: var(--space-md);
+    background: linear-gradient(135deg, var(--secondary-500), var(--highlight-500));
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+}
+
+.analyze-fight-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px var(--secondary-glow);
+}
+
+/* Fight Analysis */
+.fight-analysis {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: var(--space-xxl) var(--space-xl);
+}
+
+.analysis-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-xxl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--border-default);
+}
+
+.analysis-header h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.close-analysis {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 20px;
+    cursor: pointer;
+    padding: var(--space-sm);
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+}
+
+.close-analysis:hover {
+    color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.analysis-content {
+    display: grid;
+    gap: var(--space-xxl);
+}
+
+.fighter-analysis {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+}
+
+.fighter-analysis h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: var(--space-xl);
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--primary-500);
+    padding-bottom: var(--space-sm);
+}
+
+.fighter-analysis h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+    color: var(--text-primary);
+}
+
+/* Fight History */
+.fight-history {
+    display: grid;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.fight-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-sm);
+    padding: var(--space-lg);
+}
+
+.fight-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+}
+
+.opponent {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.result {
+    padding: 4px var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.result.win {
+    background-color: var(--success);
+    color: white;
+}
+
+.result.loss {
+    background-color: var(--error);
+    color: white;
+}
+
+.date {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.fight-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+}
+
+.stat-group {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+}
+
+.stat-value {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Physical Data */
+.physical-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.physical-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-md);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-default);
+}
+
+.physical-item .label {
+    color: var(--text-secondary);
+}
+
+.physical-item .value {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Power Metrics */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-lg);
+}
+
+.metric-card {
+    text-align: center;
+    padding: var(--space-lg);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-sm);
+}
+
+.metric-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: var(--space-sm);
+}
+
+.metric-value {
+    display: block;
+    color: var(--primary-500);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+}
+
+.metric-desc {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+/* Model Predictions */
+.model-predictions {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+}
+
+.model-predictions h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: var(--space-xl);
+    color: var(--text-primary);
+    text-align: center;
+    border-bottom: 2px solid var(--secondary-500);
+    padding-bottom: var(--space-sm);
+}
+
+.prediction-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+}
+
+.prediction-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-sm);
+    padding: var(--space-lg);
+}
+
+.prediction-card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.prediction-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-sm);
+}
+
+.prediction-item span:first-child {
+    color: var(--text-secondary);
+}
+
+.prediction-value {
+    color: var(--success);
+    font-weight: 600;
+}
+
+/* Inside Intelligence */
+.inside-intelligence {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+}
+
+.inside-intelligence h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: var(--space-xl);
+    color: var(--text-primary);
+    text-align: center;
+    border-bottom: 2px solid var(--highlight-500);
+    padding-bottom: var(--space-sm);
+}
+
+.intelligence-items {
+    display: grid;
+    gap: var(--space-lg);
+}
+
+.intel-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-sm);
+    padding: var(--space-lg);
+}
+
+.intel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+}
+
+.source {
+    color: var(--primary-500);
+    font-weight: 600;
+}
+
+.time {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.confidence {
+    padding: 2px var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.confidence.high {
+    background-color: var(--success);
+    color: white;
+}
+
+.confidence.medium {
+    background-color: var(--highlight-500);
+    color: white;
+}
+
+.confidence.low {
+    background-color: var(--text-disabled);
+    color: white;
+}
+
+.intel-content {
+    color: var(--text-primary);
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.place-bet-btn {
+    width: 100%;
+    padding: var(--space-lg);
+    background: linear-gradient(135deg, var(--primary-500), var(--highlight-500));
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.place-bet-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px var(--primary-glow);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .fighter-selection,
+    .fight-analysis {
+        padding: 0 var(--space-md);
+    }
+    
+    .page-title {
+        font-size: 28px;
+    }
+    
+    .fight-main {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+        text-align: center;
+    }
+    
+    .fighter-a,
+    .fighter-b {
+        justify-self: center;
+        text-align: center;
+        flex-direction: column;
+    }
+    
+    .odds-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .analysis-header {
+        flex-direction: column;
+        gap: var(--space-md);
+        text-align: center;
+    }
+    
+    .fight-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .physical-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .prediction-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .fight-main {
+        grid-template-columns: 1fr auto 1fr;
+    }
+    
+    .prediction-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fight-analysis {
+    animation: slideIn 0.5s ease;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .fighter-photo {
+        border-color: var(--text-primary);
+    }
+    
+    .vs-section {
+        border-color: var(--text-primary);
+    }
+}

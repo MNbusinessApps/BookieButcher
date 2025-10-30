@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bookie Butcher - Home</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header with Real-time Clock -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <i class="fas fa-utensils logo-icon"></i>
+                <span class="logo-text">The Bookie Butcher</span>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="live-betting.html" class="nav-link">Live Betting</a>
+                <a href="props.html" class="nav-link">Props</a>
+                <a href="football.html" class="nav-link">Football</a>
+                <a href="basketball.html" class="nav-link">Basketball</a>
+                <a href="baseball.html" class="nav-link">Baseball</a>
+                <a href="combat-sports.html" class="nav-link">Combat</a>
+                <a href="bankroll-manager.html" class="nav-link">The Recipe</a>
+            </nav>
+            <div class="header-right">
+                <div class="clock-display">
+                    <span class="timezone-label">MCT</span>
+                    <span class="current-time" id="currentTime">10/29/2025 7:42:00 PM</span>
+                </div>
+                <div class="bankroll-summary">
+                    <span class="balance">$1,250.00</span>
+                    <span class="daily-pnl positive">+$127.50</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-header">
+        <div class="mobile-nav-container">
+            <div class="mobile-logo">
+                <i class="fas fa-utensils"></i>
+                <span>The Bookie Butcher</span>
+            </div>
+            <button class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-clock">
+            <span>MCT: <span id="mobileTime">10/29/2025 7:42:00 PM</span></span>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="menu-header">
+                <h3>Navigation</h3>
+                <button class="close-menu" id="closeMenu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a href="index.html" class="mobile-nav-link active">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <a href="live-betting.html" class="mobile-nav-link">
+                    <i class="fas fa-play-circle"></i>
+                    Live Betting
+                </a>
+                <a href="props.html" class="mobile-nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    Props
+                </a>
+                <a href="football.html" class="mobile-nav-link">
+                    <i class="fas fa-football-ball"></i>
+                    Football
+                </a>
+                <a href="basketball.html" class="mobile-nav-link">
+                    <i class="fas fa-basketball-ball"></i>
+                    Basketball
+                </a>
+                <a href="baseball.html" class="mobile-nav-link">
+                    <i class="fas fa-baseball-ball"></i>
+                    Baseball
+                </a>
+                <a href="combat-sports.html" class="mobile-nav-link">
+                    <i class="fas fa-fist-raised"></i>
+                    Combat Sports
+                </a>
+                <a href="bankroll-manager.html" class="mobile-nav-link">
+                    <i class="fas fa-chart-line"></i>
+                    The Recipe
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">Need an educated guess?</h1>
+                <p class="hero-subtitle">
+                    We don't cheat — we out-process the market by combining speed, better features, 
+                    and calibrated probabilistic math. Real-time Minnesota Central Time ensures 
+                    you're always betting on current information.
+                </p>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions">
+            <div class="container">
+                <div class="actions-grid">
+                    <a href="live-betting.html" class="action-card primary">
+                        <div class="card-header">
+                            <i class="fas fa-play-circle"></i>
+                            <h3>Live Betting</h3>
+                        </div>
+                        <p>Real-time Vegas odds with BetMGM reference and -200 favorite flip alerts</p>
+                        <div class="card-stats">
+                            <span class="stat">
+                                <i class="fas fa-circle"></i>
+                                <span>8 Live Games</span>
+                            </span>
+                            <span class="stat alert">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>2 Flip Alerts</span>
+                            </span>
+                        </div>
+                    </a>
+
+                    <a href="props.html" class="action-card secondary">
+                        <div class="card-header">
+                            <i class="fas fa-chart-bar"></i>
+                            <h3>Props Assistant</h3>
+                        </div>
+                        <p>Prize Picks prop bets with mathematical over/under predictions and referee intel</p>
+                        <div class="card-stats">
+                            <span class="stat">
+                                <i class="fas fa-users"></i>
+                                <span>127 Props Available</span>
+                            </span>
+                            <span class="stat positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>68% Edge Rate</span>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Games Preview -->
+        <section class="live-preview">
+            <div class="container">
+                <h2 class="section-title">Live Now</h2>
+                <div class="games-grid">
+                    <div class="game-card live">
+                        <div class="game-header">
+                            <div class="teams">
+                                <span class="team home">DET</span>
+                                <span class="vs">vs</span>
+                                <span class="team away">CHI</span>
+                            </div>
+                            <span class="game-status live">4Q 2:34</span>
+                        </div>
+                        <div class="game-score">
+                            <span class="score home">21</span>
+                            <span class="score away">17</span>
+                        </div>
+                        <div class="game-odds">
+                            <div class="odds-box">
+                                <span class="odds-label">DET -3.5</span>
+                                <span class="odds-value">-110</span>
+                            </div>
+                            <div class="odds-box highlight">
+                                <span class="odds-label">FLIP ALERT</span>
+                                <span class="odds-value">-205 → +185</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="game-card live">
+                        <div class="game-header">
+                            <div class="teams">
+                                <span class="team home">DAL</span>
+                                <span class="vs">vs</span>
+                                <span class="team away">PHI</span>
+                            </div>
+                            <span class="game-status live">3Q 8:12</span>
+                        </div>
+                        <div class="game-score">
+                            <span class="score home">14</span>
+                            <span class="score away">21</span>
+                        </div>
+                        <div class="game-odds">
+                            <div class="odds-box">
+                                <span class="odds-label">O 47.5</span>
+                                <span class="odds-value">-108</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-all-link">
+                    <a href="live-betting.html" class="link-button">
+                        View All Live Games <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hot Props Preview -->
+        <section class="props-preview">
+            <div class="container">
+                <h2 class="section-title">Hot Props Tonight</h2>
+                <div class="props-grid">
+                    <div class="prop-card edge">
+                        <div class="prop-header">
+                            <span class="player">Josh Allen</span>
+                            <span class="stat">Passing Yards</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="line-info">
+                                <span class="line">265.5</span>
+                                <span class="prediction over">OVER 61.2%</span>
+                            </div>
+                            <div class="edge-info">
+                                <span class="edge-value">+12.4% Edge</span>
+                                <span class="formula">Historical Avg: 278.3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prop-card edge">
+                        <div class="prop-header">
+                            <span class="player">Ja Morant</span>
+                            <span class="stat">Points + Assists</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="line-info">
+                                <span class="line">32.5</span>
+                                <span class="prediction under">UNDER 58.7%</span>
+                            </div>
+                            <div class="edge-info">
+                                <span class="edge-value">+8.9% Edge</span>
+                                <span class="formula">Last 5: 29.8 avg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="view-all-link">
+                    <a href="props.html" class="link-button">
+                        View All Props <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bankroll Snapshot -->
+        <section class="bankroll-snapshot">
+            <div class="container">
+                <h2 class="section-title">Your Edge Tonight</h2>
+                <div class="snapshot-grid">
+                    <div class="snapshot-card">
+                        <div class="snapshot-header">
+                            <i class="fas fa-trophy"></i>
+                            <span>Win Rate</span>
+                        </div>
+                        <div class="snapshot-value">67.3%</div>
+                        <div class="snapshot-change positive">+2.1% vs last week</div>
+                    </div>
+                    <div class="snapshot-card">
+                        <div class="snapshot-header">
+                            <i class="fas fa-chart-line"></i>
+                            <span>ROI</span>
+                        </div>
+                        <div class="snapshot-value">+8.7%</div>
+                        <div class="snapshot-change positive">+$127.50 today</div>
+                    </div>
+                    <div class="snapshot-card">
+                        <div class="snapshot-header">
+                            <i class="fas fa-bullseye"></i>
+                            <span>Edge Found</span>
+                        </div>
+                        <div class="snapshot-value">23</div>
+                        <div class="snapshot-change">+EV opportunities</div>
+                    </div>
+                </div>
+                <div class="view-all-link">
+                    <a href="bankroll-manager.html" class="link-button">
+                        View The Recipe <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/time-sync.js"></script>
+</body>
+</html>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sport Selector -->
+            <div class="sport-selector">
+                <h3>Select Sports</h3>
+                <div class="sport-pills">
+                    <button class="sport-pill active" data-sport="all">All Sports</button>
+                    <button class="sport-pill" data-sport="nfl">NFL</button>
+                    <button class="sport-pill" data-sport="cfb">College Football</button>
+                    <button class="sport-pill" data-sport="nba">NBA</button>
+                    <button class="sport-pill" data-sport="ncaam">NCAA Men</button>
+                    <button class="sport-pill" data-sport="ncaaw">NCAA Women</button>
+                    <button class="sport-pill" data-sport="mlb">MLB</button>
+                    <button class="sport-pill" data-sport="nhl">NHL</button>
+                    <button class="sport-pill" data-sport="boxing">Boxing</button>
+                    <button class="sport-pill" data-sport="mma">MMA</button>
+                </div>
+            </div>
+
+            <!-- Quick Filters -->
+            <div class="quick-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i>
+                    All Games
+                </button>
+                <button class="filter-btn" data-filter="live">
+                    <i class="fas fa-play"></i>
+                    Live Only
+                </button>
+                <button class="filter-btn" data-filter="ev">
+                    <i class="fas fa-percentage"></i>
+                    +EV Only
+                </button>
+                <button class="filter-btn" data-filter="auto">
+                    <i class="fas fa-robot"></i>
+                    Auto-bet Allowed
+                </button>
+            </div>
+
+            <!-- Featured Opportunities -->
+            <div class="opportunities-section">
+                <h2>Top Opportunities Right Now</h2>
+                <div class="opportunities-grid">
+                    <div class="opportunity-card">
+                        <div class="opportunity-header">
+                            <div class="team-matchup">
+                                <span class="team">Lakers</span>
+                                <span class="vs">vs</span>
+                                <span class="team">Celtics</span>
+                            </div>
+                            <span class="game-time">LIVE - 3rd Qtr</span>
+                        </div>
+                        <div class="opportunity-details">
+                            <div class="bet-type">Lakers ML</div>
+                            <div class="odds">
+                                <span class="book">PP</span>
+                                <span class="odds-value">+150</span>
+                            </div>
+                            <div class="edge-info">
+                                <span class="edge-value">+5.2%</span>
+                                <span class="edge-label">Our Edge</span>
+                            </div>
+                        </div>
+                        <button class="bet-now-btn">Bet Now</button>
+                    </div>
+
+                    <div class="opportunity-card">
+                        <div class="opportunity-header">
+                            <div class="team-matchup">
+                                <span class="team">Chiefs</span>
+                                <span class="vs">vs</span>
+                                <span class="team">Bills</span>
+                            </div>
+                            <span class="game-time">LIVE - 2nd Half</span>
+                        </div>
+                        <div class="opportunity-details">
+                            <div class="bet-type">Mahomes 300+ Pass Yards</div>
+                            <div class="odds">
+                                <span class="book">PP</span>
+                                <span class="odds-value">-110</span>
+                            </div>
+                            <div class="edge-info">
+                                <span class="edge-value">+7.8%</span>
+                                <span class="edge-label">Our Edge</span>
+                            </div>
+                        </div>
+                        <button class="bet-now-btn">Bet Now</button>
+                    </div>
+
+                    <div class="opportunity-card">
+                        <div class="opportunity-header">
+                            <div class="team-matchup">
+                                <span class="team">Yankees</span>
+                                <span class="vs">vs</span>
+                                <span class="team">Red Sox</span>
+                            </div>
+                            <span class="game-time">7:30 PM ET</span>
+                        </div>
+                        <div class="opportunity-details">
+                            <div class="bet-type">Yankees -1.5</div>
+                            <div class="odds">
+                                <span class="book">FD</span>
+                                <span class="odds-value">+140</span>
+                            </div>
+                            <div class="edge-info">
+                                <span class="edge-value">+6.1%</span>
+                                <span class="edge-label">Our Edge</span>
+                            </div>
+                        </div>
+                        <button class="bet-now-btn">Bet Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Games Section -->
+        <section id="live" class="content-section">
+            <div class="section-header">
+                <h1>Live Games</h1>
+                <p>Real-time edges as action unfolds</p>
+            </div>
+            
+            <div class="live-games-container">
+                <div class="flip-alert" id="flipAlert" style="display: none;">
+                    <div class="flip-icon">🔥</div>
+                    <div class="flip-content">
+                        <h3>FLIP → Underdog Alert</h3>
+                        <p>Lakers were -200 favorite, now +220 underdog. Our model still rates them 65% to win.</p>
+                    </div>
+                    <button class="bet-now-btn hot">Bet Now - HOT SIGNAL</button>
+                </div>
+
+                <div class="live-games-list">
+                    <div class="live-game-card flip-candidate">
+                        <div class="game-status">
+                            <span class="status-badge live">LIVE</span>
+                            <span class="status-badge favorite">WAS FAVORITE</span>
+                            <span class="quarter">3rd Quarter</span>
+                            <span class="time">2:34</span>
+                        </div>
+                        <div class="teams">
+                            <div class="team">
+                                <img src="https://via.placeholder.com/40/552583/FFFFFF?text=LAL" alt="Lakers" class="team-logo">
+                                <span class="team-name">Lakers</span>
+                                <span class="score">78</span>
+                            </div>
+                            <div class="vs">vs</div>
+                            <div class="team">
+                                <img src="https://via.placeholder.com/40/007A33/FFFFFF?text=BOS" alt="Celtics" class="team-logo">
+                                <span class="team-name">Celtics</span>
+                                <span class="score">82</span>
+                            </div>
+                        </div>
+                        <div class="favorite-flip-info">
+                            <div class="flip-status">
+                                <span class="original-odds">Started: -200</span>
+                                <span class="current-odds">Current: -110</span>
+                                <span class="flip-progress">Trending to +200</span>
+                            </div>
+                            <div class="model-rating">
+                                <span class="model-win-prob">Our Model: 62% Lakers Win</span>
+                                <span class="edge-display">+8.4% Edge</span>
+                            </div>
+                        </div>
+                        <div class="live-odds">
+                            <div class="odds-row">
+                                <span class="book">PP</span>
+                                <span class="line">LAL +3.5</span>
+                                <span class="odds">-110</span>
+                                <span class="edge positive">+5.2%</span>
+                            </div>
+                            <div class="odds-row">
+                                <span class="book">FD</span>
+                                <span class="line">LAL ML</span>
+                                <span class="odds">+150</span>
+                                <span class="edge positive">+4.8%</span>
+                            </div>
+                        </div>
+                        <button class="bet-now-btn hot">WATCH - FLIP IMMINENT</button>
+                    </div>
+
+                    <div class="live-game-card">
+                        <div class="game-status">
+                            <span class="status-badge live">LIVE</span>
+                            <span class="quarter">2nd Half</span>
+                            <span class="time">8:45</span>
+                        </div>
+                        <div class="teams">
+                            <div class="team">
+                                <img src="https://via.placeholder.com/40/CA1232/FFFFFF?text=KC" alt="Chiefs" class="team-logo">
+                                <span class="team-name">Chiefs</span>
+                                <span class="score">21</span>
+                            </div>
+                            <div class="vs">vs</div>
+                            <div class="team">
+                                <img src="https://via.placeholder.com/40/00338D/FFFFFF?text=BUF" alt="Bills" class="team-logo">
+                                <span class="team-name">Bills</span>
+                                <span class="score">17</span>
+                            </div>
+                        </div>
+                        <div class="live-odds">
+                            <div class="odds-row">
+                                <span class="book">PP</span>
+                                <span class="line">Mahomes 300+ Pass Yds</span>
+                                <span class="odds">-110</span>
+                                <span class="edge positive">+7.8%</span>
+                            </div>
+                            <div class="odds-row">
+                                <span class="book">FD</span>
+                                <span class="line">Over 48.5</span>
+                                <span class="odds">-105</span>
+                                <span class="edge positive">+3.2%</span>
+                            </div>
+                        </div>
+                        <button class="bet-now-btn">Bet Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Moneyline/Spread Section -->
+        <section id="moneyline" class="content-section">
+            <div class="section-header">
+                <h1>Moneyline & Spread</h1>
+                <p>Pre-game and live +EV opportunities</p>
+            </div>
+
+            <div class="moneyline-container">
+                <div class="opportunity-list">
+                    <div class="moneyline-card">
+                        <div class="game-info">
+                            <span class="game-time">Tonight 8:30 PM</span>
+                            <div class="teams">
+                                <span class="team">Cowboys</span>
+                                <span class="line">-3.5</span>
+                                <span class="team">Eagles</span>
+                            </div>
+                        </div>
+                        <div class="bet-options">
+                            <div class="bet-option">
+                                <span class="book">PP</span>
+                                <span class="line">DAL -3.5</span>
+                                <span class="odds">-110</span>
+                                <span class="edge positive">+6.1%</span>
+                                <button class="bet-now-btn">Bet Now</button>
+                            </div>
+                            <div class="bet-option">
+                                <span class="book">FD</span>
+                                <span class="line">PHI +3.5</span>
+                                <span class="odds">-110</span>
+                                <span class="edge positive">+5.3%</span>
+                                <button class="bet-now-btn">Bet Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="moneyline-card">
+                        <div class="game-info">
+                            <span class="game-time">Tomorrow 7:00 PM</span>
+                            <div class="teams">
+                                <span class="team">Packers</span>
+                                <span class="line">+7.5</span>
+                                <span class="team">49ers</span>
+                            </div>
+                        </div>
+                        <div class="bet-options">
+                            <div class="bet-option">
+                                <span class="book">PP</span>
+                                <span class="line">GB +7.5</span>
+                                <span class="odds">-105</span>
+                                <span class="edge positive">+5.7%</span>
+                                <button class="bet-now-btn">Bet Now</button>
+                            </div>
+                            <div class="bet-option">
+                                <span class="book">FD</span>
+                                <span class="line">SF -7.5</span>
+                                <span class="odds">-115</span>
+                                <span class="edge positive">+4.2%</span>
+                                <button class="bet-now-btn">Bet Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Props Section -->
+        <section id="props" class="content-section">
+            <div class="section-header">
+                <h1>Prop Bets</h1>
+                <p>Player props and same-game opportunities</p>
+            </div>
+
+            <div class="props-container">
+                <div class="props-sport-filter">
+                    <button class="props-sport-btn active" data-sport="all">All Props</button>
+                    <button class="props-sport-btn" data-sport="nfl">NFL</button>
+                    <button class="props-sport-btn" data-sport="nba">NBA</button>
+                    <button class="props-sport-btn" data-sport="mlb">MLB</button>
+                    <button class="props-sport-btn" data-sport="boxing">Boxing</button>
+                    <button class="props-sport-btn" data-sport="mma">MMA</button>
+                </div>
+
+                <div class="props-list">
+                    <div class="prop-card">
+                        <div class="player-info">
+                            <img src="https://via.placeholder.com/50/552583/FFFFFF?text=JA" alt="Josh Allen" class="player-photo">
+                            <div class="player-details">
+                                <h3>Josh Allen</h3>
+                                <span class="team">Buffalo Bills • QB</span>
+                            </div>
+                        </div>
+                        <div class="prop-details">
+                            <div class="prop-type">Passing Yards</div>
+                            <div class="prop-line">Over 300.5</div>
+                            <div class="model-calc">
+                                <div class="calc-row">
+                                    <span>Expected Attempts:</span>
+                                    <span>38.2</span>
+                                </div>
+                                <div class="calc-row">
+                                    <span>Expected Makes:</span>
+                                    <span>25.1</span>
+                                </div>
+                                <div class="calc-row">
+                                    <span>P(≥300 yards):</span>
+                                    <span class="calc-result">58.4%</span>
+                                </div>
+                                <div class="calc-row">
+                                    <span>Our Edge:</span>
+                                    <span class="calc-result positive">+10.8%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prop-odds">
+                            <div class="odds-info">
+                                <span class="book">PP</span>
+                                <span class="odds">-110</span>
+                                <span class="implied-prob">47.6%</span>
+                            </div>
+                            <div class="edge-info">
+                                <span class="edge-value">+10.8%</span>
+                                <span class="edge-label">Our Edge</span>
+                            </div>
+                            <button class="bet-now-btn">Bet Now</button>
+                        </div>
+                    </div>
+
+                    <div class="prop-card">
+                        <div class="player-info">
+                            <img src="https://via.placeholder.com/50/552583/FFFFFF?text=LJ" alt="LeBron James" class="player-photo">
+                            <div class="player-details">
+                                <h3>LeBron James</h3>
+                                <span class="team">Lakers • SF</span>
+                            </div>
+                        </div>
+                        <div class="prop-details">
+                            <div class="prop-type">Points</div>
+                            <div class="prop-line">Over 24.5</div>
+                            <div class="model-calc">
+                                <div class="calc-row">
+                                    <span>Expected Points:</span>
+                                    <span>26.8</span>
+                                </div>
+                                <div class="calc-row">
+                                    <span>Variance:</span>
+                                    <span>47.2</span>
+                                </div>
+                                <div class="calc-row">
+                                    <span>P(≥24 pts):</span>
+                                    <span class="calc-result">64.2%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prop-odds">
+                            <div class="odds-info">
+                                <span class="book">PP</span>
+                                <span class="odds">-105</span>
+                                <span class="implied-prob">48.8%</span>
+                            </div>
+                            <div class="edge-info">
+                                <span class="edge-value">+15.4%</span>
+                                <span class="edge-label">Our Edge</span>
+                            </div>
+                            <button class="bet-now-btn">Bet Now</button>
+                        </div>
+                    </div>
+
+                    <div class="prop-card">
+                        <div class="player-info">
+                            <img src="https://via.placeholder.com/50/BA002C/FFFFFF?text=MT" alt="Mike Trout" class="player-photo">
+                            <div class="player-details">
+                                <h3>Mike Trout</h3>
+                                <span class="team">Angels • CF</span>
+                            </div>
+                        </div>
+                        <div class="prop-details">
+                            <div class="prop-type">Hits</div>
+                            <div class="prop-line">Over 1.5</div>
+                            <div class="model-calc">
+                                <div class="calc-row">
+                                    <span>Expected At-Bats:</span>
+                                    <span>4.2</span>
+                                </div>
+                                <div class="calc-row">
+                                    <span>Hit Probability:</span>
+                                    <span>0.31</span>
+                                </div>
+                                <div class="calc-row">
+                                    <span>P(≥2 hits):</span>
+                                    <span class="calc-result">42.1%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prop-odds">
+                            <div class="odds-info">
+                                <span class="book">PP</span>
+                                <span class="odds">+110</span>
+                                <span class="implied-prob">47.6%</span>
+                            </div>
+                            <div class="edge-info">
+                                <span class="edge-value">+5.5%</span>
+                                <span class="edge-label">Our Edge</span>
+                            </div>
+                            <button class="bet-now-btn">Bet Now</button>
+                        </div>
+                    </div>
+
+                    <div class="prop-card">
+                        <div class="player-info">
+                            <img src="https://via.placeholder.com/50/552583/FFFFFF?text=NJ" alt="Nikola Jokic" class="player-photo">
+                            <div class="player-details">
+                                <h3>Nikola Jokic</h3>
+                                <span class="team">Nuggets • C</span>
+                            </div>
+                        </div>
+                        <div class="prop-details">
+                            <div class="prop-type">Rebounds + Assists</div>
+                            <div class="prop-line">Over 22.0</div>
+                            <div class="model-calc">
+                                <div class="calc-row">
+                                    <span>Expected Rebounds:</span>
+                                    <span>9.2</span>
+                                </div>
+                                <div class="calc-row">
+                                    <span>Expected Assists:</span>
+                                    <span>12.8</span>
+                                </div>
+                                <div class="calc-row">
+                                    <span>Expected Total:</span>
+                                    <span>22.0</span>
+                                </div>
+                                <div class="calc-row">
+                                    <span>P(≥22):</span>
+                                    <span class="calc-result">51.3%</span>
+                                </div>
+                                <div class="calc-row">
+                                    <span>Our Edge:</span>
+                                    <span class="calc-result positive">+3.7%</span>
+                                </div>
+                            </div>
+                            <div class="venue-specific">
+                                <h5>📍 Venue: TD Garden</h5>
+                                <div class="venue-stats">Last 3 here: 8.3 3PT avg (season: 7.4)</div>
+                                <div class="venue-stats">Assist rate +8% at this venue</div>
+                            </div>
+                            <div class="inside-info">
+                                <h5>🔍 Inside Intel</h5>
+                                <div class="intel-item">
+                                    <span class="intel-source">@NuggetsPR</span>
+                                    <div class="intel-content">"Jokic in excellent condition, weight down 8 lbs from last season"</div>
+                                </div>
+                                <div class="intel-item">
+                                    <span class="intel-source">@AdrianDater</span>
+                                    <div class="intel-content">"Jokic looking leaner and more explosive in recent practices"</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="prop-odds">
+                            <div class="odds-info">
+                                <span class="book">PP</span>
+                                <span class="odds">-105</span>
+                                <span class="implied-prob">48.8%</span>
+                            </div>
+                            <div class="edge-info">
+                                <span class="edge-value">+3.7%</span>
+                                <span class="edge-label">Our Edge</span>
+                            </div>
+                            <button class="bet-now-btn">Bet Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section id="settings" class="content-section">
+            <div class="section-header">
+                <h1>Settings</h1>
+                <p>Configure your betting preferences</p>
+            </div>
+
+            <div class="settings-container">
+                <div class="setting-group">
+                    <h3>Bankroll Management</h3>
+                    <div class="setting-item">
+                        <label>Default Bankroll</label>
+                        <input type="number" value="1000" class="setting-input">
+                    </div>
+                    <div class="setting-item">
+                        <label>Fractional Kelly (Default)</label>
+                        <select class="setting-input">
+                            <option value="0.25">25% Kelly</option>
+                            <option value="0.5" selected>50% Kelly</option>
+                            <option value="1">Full Kelly</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>Alert Preferences</h3>
+                    <div class="setting-item">
+                        <label>Minimum Edge Threshold</label>
+                        <select class="setting-input">
+                            <option value="3">3%</option>
+                            <option value="5" selected>5%</option>
+                            <option value="8">8%</option>
+                            <option value="10">10%</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" checked>
+                            Push Notifications for HOT Signals
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" checked>
+                            Email Alerts for Daily Opportunities
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>Sportsbooks Connections</h3>
+                    <div class="setting-item">
+                        <label>Prize Picks</label>
+                        <span class="connection-status connected">Connected</span>
+                    </div>
+                    <div class="setting-item">
+                        <label>FanDuel</label>
+                        <span class="connection-status connected">Connected</span>
+                    </div>
+                    <div class="setting-item">
+                        <label>BetMGM</label>
+                        <span class="connection-status disconnected">Disconnected</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="menu-header">
+                <h3>Menu</h3>
+                <button class="close-menu" id="closeMenu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a href="#home" class="mobile-nav-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <a href="#live" class="mobile-nav-link">
+                    <i class="fas fa-play-circle"></i>
+                    Live Games
+                </a>
+                <a href="#moneyline" class="mobile-nav-link">
+                    <i class="fas fa-chart-line"></i>
+                    Moneyline & Spread
+                </a>
+                <a href="#props" class="mobile-nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    Prop Bets
+                </a>
+                <a href="#settings" class="mobile-nav-link">
+                    <i class="fas fa-cog"></i>
+                    Settings
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/live-data.js"></script>
+</body>
+</html>

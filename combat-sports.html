@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bookie Butcher - Combat Sports</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <i class="fas fa-utensils logo-icon"></i>
+                <span class="logo-text">The Bookie Butcher</span>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="live-betting.html" class="nav-link">Live Betting</a>
+                <a href="props.html" class="nav-link">Props</a>
+                <a href="football.html" class="nav-link">Football</a>
+                <a href="basketball.html" class="nav-link">Basketball</a>
+                <a href="baseball.html" class="nav-link">Baseball</a>
+                <a href="combat-sports.html" class="nav-link active">
+                    <i class="fas fa-fist-raised"></i>
+                    Combat
+                </a>
+                <a href="bankroll-manager.html" class="nav-link">The Recipe</a>
+            </nav>
+            <div class="header-right">
+                <div class="clock-display">
+                    <span class="timezone-label">MCT</span>
+                    <span class="current-time" id="currentTime">10/29/2025 7:42:00 PM</span>
+                </div>
+                <div class="bankroll-summary">
+                    <span class="balance">$1,250.00</span>
+                    <span class="daily-pnl positive">+$127.50</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-header">
+        <div class="mobile-nav-container">
+            <div class="mobile-logo">
+                <i class="fas fa-fist-raised"></i>
+                <span>Combat Sports</span>
+            </div>
+            <button class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-clock">
+            <span>MCT: <span id="mobileTime">10/29/2025 7:42:00 PM</span></span>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="menu-header">
+                <h3>Navigation</h3>
+                <button class="close-menu" id="closeMenu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a href="index.html" class="mobile-nav-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <a href="live-betting.html" class="mobile-nav-link">
+                    <i class="fas fa-play-circle"></i>
+                    Live Betting
+                </a>
+                <a href="props.html" class="mobile-nav-link">
+                    <i class="fas fa-chart-bar"></i>
+                    Props
+                </a>
+                <a href="football.html" class="mobile-nav-link">
+                    <i class="fas fa-football-ball"></i>
+                    Football
+                </a>
+                <a href="basketball.html" class="mobile-nav-link">
+                    <i class="fas fa-basketball-ball"></i>
+                    Basketball
+                </a>
+                <a href="baseball.html" class="mobile-nav-link">
+                    <i class="fas fa-baseball-ball"></i>
+                    Baseball
+                </a>
+                <a href="combat-sports.html" class="mobile-nav-link active">
+                    <i class="fas fa-fist-raised"></i>
+                    Combat Sports
+                </a>
+                <a href="bankroll-manager.html" class="mobile-nav-link">
+                    <i class="fas fa-chart-line"></i>
+                    The Recipe
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Combat Sports Header -->
+        <section class="sport-header">
+            <div class="container">
+                <div class="header-content">
+                    <h1 class="page-title">
+                        <i class="fas fa-fist-raised"></i>
+                        Combat Sports
+                        <span class="subtitle">Boxing & MMA Fight Analysis</span>
+                    </h1>
+                    <div class="sport-stats">
+                        <div class="stat-item">
+                            <span class="label">Upcoming Fights:</span>
+                            <span class="value">5</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">Edge Opportunities:</span>
+                            <span class="value positive">3</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="label">High Confidence:</span>
+                            <span class="value positive">2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fight Schedule -->
+        <section class="fight-schedule">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Upcoming Fights</h2>
+                    <div class="data-source">
+                        <span class="source-label">Analysis based on:</span>
+                        <span class="source-name">Last 3 fights + performance metrics</span>
+                    </div>
+                </div>
+
+                <div class="fights-grid">
+                    <!-- Main Event: Jake Paul vs Nate Diaz -->
+                    <div class="fight-card main-event" data-sport="boxing">
+                        <div class="fight-header">
+                            <span class="event-label">MAIN EVENT</span>
+                            <span class="date-time">Tonight 9:00 PM ET</span>
+                        </div>
+
+                        <div class="fighters">
+                            <div class="fighter fighter-a">
+                                <div class="fighter-info">
+                                    <span class="name">Jake Paul</span>
+                                    <span class="record">9-2-0 (7 KO)</span>
+                                    <span class="weight">Cruiserweight 200lb</span>
+                                </div>
+                                <div class="odds">
+                                    <span class="favorite">-180</span>
+                                </div>
+                            </div>
+                            
+                            <div class="vs-section">
+                                <span class="vs">VS</span>
+                            </div>
+                            
+                            <div class="fighter fighter-b">
+                                <div class="fighter-info">
+                                    <span class="name">Nate Diaz</span>
+                                    <span class="record">22-14-0 (12 KO)</span>
+                                    <span class="weight">Cruiserweight 200lb</span>
+                                </div>
+                                <div class="odds">
+                                    <span class="underdog">+150</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fight-analysis">
+                            <div class="analysis-section">
+                                <h4>Fight Prediction Model</h4>
+                                <div class="prediction">
+                                    <span class="predicted-winner">Nate Diaz</span>
+                                    <span class="confidence">72% confidence</span>
+                                    <span class="edge">+12.3% Edge</span>
+                                </div>
+                            </div>
+
+                            <div class="analysis-breakdown">
+                                <div class="factor">
+                                    <span class="factor-name">Striking Advantage:</span>
+                                    <span class="factor-value">Paul +15%</span>
+                                </div>
+                                <div class="factor">
+                                    <span class="factor-name">Grappling Advantage:</span>
+                                    <span class="factor-value">Diaz +28%</span>
+                                </div>
+                                <div class="factor">
+                                    <span class="factor-name">Experience Factor:</span>
+                                    <span class="factor-value">Diaz +35%</span>
+                                </div>
+                                <div class="factor">
+                                    <span class="factor-name">Power Rating:</span>
+                                    <span class="factor-value">Paul 8.2/10</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="last-3-fights">
+                            <h4>Recent Performance</h4>
+                            <div class="fights-record">
+                                <div class="fight-record">
+                                    <span class="opponent">vs. Tommy Fury</span>
+                                    <span class="result">L TKO5</span>
+                                    <span class="performance">Struggled with volume</span>
+                                </div>
+                                <div class="fight-record">
+                                    <span class="opponent">vs. Nate Robinson</span>
+                                    <span class="result">W KO1</span>
+                                    <span class="performance">One-punch power decisive</span>
+                                </div>
+                                <div class="fight-record">
+                                    <span class="opponent">vs. AnEsonGib</span>
+                                    <span class="result">W UD</span>
+                                    <span class="performance">Outboxed effectively</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="betting-actions">
+                            <button class="action-btn primary">
+                                <i class="fas fa-coins"></i>
+                                Bet Diaz +150
+                            </button>
+                            <button class="action-btn secondary">
+                                <i class="fas fa-chart-line"></i>
+                                Props
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Co-Main Event -->
+                    <div class="fight-card" data-sport="mma">
+                        <div class="fight-header">
+                            <span class="event-label">CO-MAIN EVENT</span>
+                            <span class="date-time">Tonight 7:30 PM ET</span>
+                        </div>
+
+                        <div class="fighters">
+                            <div class="fighter fighter-a">
+                                <div class="fighter-info">
+                                    <span class="name">Alex Pereira</span>
+                                    <span class="record">9-2-0 (7 KO)</span>
+                                    <span class="weight">Light Heavyweight 205lb</span>
+                                </div>
+                                <div class="odds">
+                                    <span class="favorite">-140</span>
+                                </div>
+                            </div>
+                            
+                            <div class="vs-section">
+                                <span class="vs">VS</span>
+                            </div>
+                            
+                            <div class="fighter fighter-b">
+                                <div class="fighter-info">
+                                    <span class="name">Magomed Ankalaev</span>
+                                    <span class="record">18-1-0 (8 KO)</span>
+                                    <span class="weight">Light Heavyweight 205lb</span>
+                                </div>
+                                <div class="odds">
+                                    <span class="underdog">+120</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fight-analysis">
+                            <div class="analysis-section">
+                                <h4>Fight Prediction Model</h4>
+                                <div class="prediction">
+                                    <span class="predicted-winner">Ankalaev</span>
+                                    <span class="confidence">64% confidence</span>
+                                    <span class="edge">+8.7% Edge</span>
+                                </div>
+                            </div>
+
+                            <div class="analysis-breakdown">
+                                <div class="factor">
+                                    <span class="factor-name">Striking Advantage:</span>
+                                    <span class="factor-value">Pereira +20%</span>
+                                </div>
+                                <div class="factor">
+                                    <span class="factor-name">Wrestling Advantage:</span>
+                                    <span class="factor-value">Ankalaev +25%</span>
+                                </div>
+                                <div class="factor">
+                                    <span class="factor-name">Cage Control:</span>
+                                    <span class="factor-value">Ankalaev +18%</span>
+                                </div>
+                                <div class="factor">
+                                    <span class="factor-name">Power Differential:</span>
+                                    <span class="factor-value">Even +0%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="last-3-fights">
+                            <h4>Recent Performance</h4>
+                            <div class="fights-record">
+                                <div class="fight-record">
+                                    <span class="opponent">vs. Jan Blachowicz</span>
+                                    <span class="result">L UD</span>
+                                    <span class="performance">Outgrappled by experience</span>
+                                </div>
+                                <div class="fight-record">
+                                    <span class="opponent">vs. Israel Adesanya</span>
+                                    <span class="result">W KO5</span>
+                                    <span class="performance">Late knockout highlight</span>
+                                </div>
+                                <div class="fight-record">
+                                    <span class="opponent">vs. Sean Strickland</span>
+                                    <span class="result">W UD</span>
+                                    <span class="performance">Controlled entire fight</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="betting-actions">
+                            <button class="action-btn secondary">
+                                <i class="fas fa-chart-line"></i>
+                                Props
+                            </button>
+                            <button class="action-btn secondary">
+                                <i class="fas fa-info-circle"></i>
+                                Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Undercard Fight -->
+                    <div class="fight-card" data-sport="boxing">
+                        <div class="fight-header">
+                            <span class="event-label">PRELIM</span>
+                            <span class="date-time">Tonight 6:00 PM ET</span>
+                        </div>
+
+                        <div class="fighters">
+                            <div class="fighter fighter-a">
+                                <div class="fighter-info">
+                                    <span class="name">Devin Haney</span>
+                                    <span class="record">31-0-0 (15 KO)</span>
+                                    <span class="weight">Lightweight 135lb</span>
+                                </div>
+                                <div class="odds">
+                                    <span class="favorite">-300</span>
+                                </div>
+                            </div>
+                            
+                            <div class="vs-section">
+                                <span class="vs">VS</span>
+                            </div>
+                            
+                            <div class="fighter fighter-b">
+                                <div class="fighter-info">
+                                    <span class="name">Vasiliy Lomachenko</span>
+                                    <span class="record">17-3-0 (11 KO)</span>
+                                    <span class="weight">Lightweight 135lb</span>
+                                </div>
+                                <div class="odds">
+                                    <span class="underdog">+250</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="fight-analysis">
+                            <div class="analysis-section">
+                                <h4>Fight Prediction Model</h4>
+                                <div class="prediction">
+                                    <span class="predicted-winner">Haney</span>
+                                    <span class="confidence">71% confidence</span>
+                                    <span class="edge">+11.8% Edge</span>
+                                </div>
+                            </div>
+
+                            <div class="analysis-breakdown">
+                                <div class="factor">
+                                    <span class="factor-name">Speed Advantage:</span>
+                                    <span class="factor-value">Haney +22%</span>
+                                </div>
+                                <div class="factor">
+                                    <span class="factor-name">Experience Factor:</span>
+                                    <span class="factor-value">Haney +15%</span>
+                                </div>
+                                <div class="factor">
+                                    <span class="factor-name">Technical Skill:</span>
+                                    <span class="factor-value">Lomachenko +8%</span>
+                                </div>
+                                <div class="factor">
+                                    <span class="factor-name">Power Rating:</span>
+                                    <span class="factor-value">Haney 7.8/10</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="betting-actions">
+                            <button class="action-btn secondary">
+                                <i class="fas fa-chart-line"></i>
+                                Props
+                            </button>
+                            <button class="action-btn secondary">
+                                <i class="fas fa-info-circle"></i>
+                                Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fight Props -->
+        <section class="fight-props">
+            <div class="container">
+                <h2>Top Fight Props</h2>
+                <div class="props-grid">
+                    <div class="prop-card edge-high">
+                        <div class="prop-header">
+                            <span class="fighter">Paul vs Diaz</span>
+                            <span class="method">Method of Victory</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="stat-line">
+                                <span class="stat">Fight Goes Distance</span>
+                                <span class="line">No (-140)</span>
+                            </div>
+                            <div class="prediction">
+                                <span class="direction">NO</span>
+                                <span class="probability">68.3%</span>
+                            </div>
+                            <div class="edge">
+                                <span class="edge-value">+9.7% Edge</span>
+                                <span class="confidence">Medium</span>
+                            </div>
+                            <div class="formula">
+                                Diaz grappling + Paul cardio concerns
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prop-card edge-high">
+                        <div class="prop-header">
+                            <span class="fighter">Pereira vs Ankalaev</span>
+                            <span class="method">Round Betting</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="stat-line">
+                                <span class="stat">Fight Ends Rounds 1-2</span>
+                                <span class="line">Yes (+180)</span>
+                            </div>
+                            <div class="prediction">
+                                <span class="direction">YES</span>
+                                <span class="probability">63.2%</span>
+                            </div>
+                            <div class="edge">
+                                <span class="edge-value">+13.8% Edge</span>
+                                <span class="confidence">High</span>
+                            </div>
+                            <div class="formula">
+                                Pereira power + early aggression pattern
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prop-card edge-medium">
+                        <div class="prop-header">
+                            <span class="fighter">Haney vs Lomachenko</span>
+                            <span class="method">Total Rounds</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="stat-line">
+                                <span class="stat">Over 9.5 Rounds</span>
+                                <span class="line">Yes (-110)</span>
+                            </div>
+                            <div class="prediction">
+                                <span class="direction">YES</span>
+                                <span class="probability">61.7%</span>
+                            </div>
+                            <div class="edge">
+                                <span class="edge-value">+7.2% Edge</span>
+                                <span class="confidence">Medium</span>
+                            </div>
+                            <div class="formula">
+                                Both fighters prefer decision wins
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fighter Analytics -->
+        <section class="fighter-analytics">
+            <div class="container">
+                <h2>Fighter Deep Dive</h2>
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <h3>Nate Diaz - Statistical Profile</h3>
+                        <div class="fighter-stats">
+                            <div class="stat-row">
+                                <span class="stat-name">Win Rate vs Younger Opponents:</span>
+                                <span class="stat-value">67% (8-4 record)</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-name">Cardio Rating:</span>
+                                <span class="stat-value positive">9.2/10 (Elite)</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-name">Submission Rate:</span>
+                                <span class="stat-value">32% of wins</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-name">Weigh-in vs Fight Night:</span>
+                                <span class="stat-value">+4.2lb (advantage)</span>
+                            </div>
+                        </div>
+                        <div class="key-strengths">
+                            <h4>Key Advantages</h4>
+                            <ul>
+                                <li>Superior cardio and chin durability</li>
+                                <li>Volume striking with unorthodox style</li>
+                                <li>Elite ground game and submissions</li>
+                                <li>Experience vs celebrity opponents</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="analytics-card">
+                        <h3>Jake Paul - Power Index</h3>
+                        <div class="fighter-stats">
+                            <div class="stat-row">
+                                <span class="stat-name">KO Rate in Last 5:</span>
+                                <span class="stat-value">80% (4/5)</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-name">Power Rating:</span>
+                                <span class="stat-value">8.2/10</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-name">Punch Accuracy:</span>
+                                <span class="stat-value">34% (Above avg)</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-name">Weigh-in vs Fight Night:</span>
+                                <span class="stat-value">+2.8lb</span>
+                            </div>
+                        </div>
+                        <div class="key-concerns">
+                            <h4>Red Flags</h4>
+                            <ul>
+                                <li>Limited pro experience vs elite opponents</li>
+                                <li>Cardio questions in championship rounds</li>
+                                <li>Struggles with volume punchers</li>
+                                <li>Can be taken down and controlled</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weigh-in Results -->
+        <section class="weigh-in-results">
+            <div class="container">
+                <h2>Weigh-In Analysis</h2>
+                <div class="weigh-in-grid">
+                    <div class="weigh-in-card">
+                        <h3>Paul vs Diaz - Weight Analysis</h3>
+                        <div class="weight-breakdown">
+                            <div class="fighter-weight">
+                                <span class="fighter-name">Jake Paul</span>
+                                <div class="weight-info">
+                                    <span class="weigh-in">200.0 lb</span>
+                                    <span class="fight-night">202.8 lb (+2.8)</span>
+                                </div>
+                            </div>
+                            <div class="fighter-weight">
+                                <span class="fighter-name">Nate Diaz</span>
+                                <div class="weight-info">
+                                    <span class="weigh-in">200.0 lb</span>
+                                    <span class="fight-night">204.2 lb (+4.2)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="weight-advantage">
+                            <span class="advantage-label">Weight Advantage:</span>
+                            <span class="advantage-value positive">Diaz (+3.4lb rehydration)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/time-sync.js"></script>
+    <script src="js/sport-pages.js"></script>
+    <script src="js/boxing-mma.js"></script>
+</body>
+</html>

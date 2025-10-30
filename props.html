@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bookie Butcher - Props Assistant</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <i class="fas fa-utensils logo-icon"></i>
+                <span class="logo-text">The Bookie Butcher</span>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="live-betting.html" class="nav-link">Live Betting</a>
+                <a href="props.html" class="nav-link active">Props</a>
+                <a href="football.html" class="nav-link">Football</a>
+                <a href="basketball.html" class="nav-link">Basketball</a>
+                <a href="baseball.html" class="nav-link">Baseball</a>
+                <a href="combat-sports.html" class="nav-link">Combat</a>
+                <a href="bankroll-manager.html" class="nav-link">The Recipe</a>
+            </nav>
+            <div class="header-right">
+                <div class="clock-display">
+                    <span class="timezone-label">MCT</span>
+                    <span class="current-time" id="currentTime">10/29/2025 7:42:00 PM</span>
+                </div>
+                <div class="bankroll-summary">
+                    <span class="balance">$1,250.00</span>
+                    <span class="daily-pnl positive">+$127.50</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-header">
+        <div class="mobile-nav-container">
+            <div class="mobile-logo">
+                <i class="fas fa-utensils"></i>
+                <span>Props Assistant</span>
+            </div>
+            <button class="hamburger-menu" id="hamburgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-clock">
+            <span>MCT: <span id="mobileTime">10/29/2025 7:42:00 PM</span></span>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="menu-header">
+                <h3>Navigation</h3>
+                <button class="close-menu" id="closeMenu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-nav-links">
+                <a href="index.html" class="mobile-nav-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <a href="live-betting.html" class="mobile-nav-link">
+                    <i class="fas fa-play-circle"></i>
+                    Live Betting
+                </a>
+                <a href="props.html" class="mobile-nav-link active">
+                    <i class="fas fa-chart-bar"></i>
+                    Props
+                </a>
+                <a href="football.html" class="mobile-nav-link">
+                    <i class="fas fa-football-ball"></i>
+                    Football
+                </a>
+                <a href="basketball.html" class="mobile-nav-link">
+                    <i class="fas fa-basketball-ball"></i>
+                    Basketball
+                </a>
+                <a href="baseball.html" class="mobile-nav-link">
+                    <i class="fas fa-baseball-ball"></i>
+                    Baseball
+                </a>
+                <a href="combat-sports.html" class="mobile-nav-link">
+                    <i class="fas fa-fist-raised"></i>
+                    Combat Sports
+                </a>
+                <a href="bankroll-manager.html" class="mobile-nav-link">
+                    <i class="fas fa-chart-line"></i>
+                    The Recipe
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Props Header -->
+        <section class="props-header">
+            <div class="container">
+                <div class="header-content">
+                    <h1 class="page-title">
+                        <i class="fas fa-chart-bar"></i>
+                        Props Assistant
+                    </h1>
+                    <div class="props-summary">
+                        <div class="summary-item">
+                            <span class="label">Data Source:</span>
+                            <span class="value">Prize Picks</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Active Props:</span>
+                            <span class="value">127</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Edge Rate:</span>
+                            <span class="value positive">68.3%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Props Calculator -->
+        <section class="props-calculator">
+            <div class="container">
+                <div class="calc-header">
+                    <h2>Mathematical Prop Prediction</h2>
+                    <p>Enter any prop bet to calculate the optimal over/under prediction using historical data</p>
+                </div>
+                
+                <div class="calc-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Player Name</label>
+                            <input type="text" id="playerName" placeholder="e.g., Josh Allen" value="Nikola Jokic">
+                        </div>
+                        <div class="form-group">
+                            <label>Sport</label>
+                            <select id="sportSelect">
+                                <option value="nba">NBA</option>
+                                <option value="nfl">NFL</option>
+                                <option value="mlb">MLB</option>
+                                <option value="nhl">NHL</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Stat Type</label>
+                            <select id="statType">
+                                <option value="rebounds">Rebounds</option>
+                                <option value="assists">Assists</option>
+                                <option value="points">Points</option>
+                                <option value="rebounds_assists">Reb + Assists</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Current Line</label>
+                            <input type="number" id="currentLine" step="0.5" placeholder="22.5" value="22.5">
+                        </div>
+                        <div class="form-group">
+                            <button id="calcBtn" class="calc-button">
+                                <i class="fas fa-calculator"></i>
+                                Calculate Prediction
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="calcResults" class="calc-results">
+                    <!-- Results will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Hot Props Section -->
+        <section class="hot-props">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Hot Props Tonight</h2>
+                    <div class="filter-controls">
+                        <select id="sportFilter">
+                            <option value="all">All Sports</option>
+                            <option value="nfl">NFL</option>
+                            <option value="nba">NBA</option>
+                            <option value="mlb">MLB</option>
+                        </select>
+                        <select id="edgeFilter">
+                            <option value="all">All Edges</option>
+                            <option value="high">High Edge (10%+)</option>
+                            <option value="medium">Medium Edge (5-10%)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="props-grid">
+                    <!-- NFL Props -->
+                    <div class="prop-card edge-high" data-sport="nfl">
+                        <div class="prop-header">
+                            <span class="player-name">Josh Allen</span>
+                            <span class="team">BUF</span>
+                            <span class="sport-badge nfl">NFL</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="stat-line">
+                                <span class="stat">Passing Yards</span>
+                                <span class="line">265.5</span>
+                            </div>
+                            <div class="prediction-section">
+                                <div class="prediction">
+                                    <span class="direction over">OVER</span>
+                                    <span class="probability">61.2%</span>
+                                </div>
+                                <div class="edge-info">
+                                    <span class="edge-value">+12.4% Edge</span>
+                                    <span class="confidence">High Confidence</span>
+                                </div>
+                            </div>
+                            <div class="formula-breakdown">
+                                <div class="formula-item">
+                                    <span class="label">Historical Avg:</span>
+                                    <span class="value">278.3 yards</span>
+                                </div>
+                                <div class="formula-item">
+                                    <span class="label">Recent Trend:</span>
+                                    <span class="value">+8.7% vs avg</span>
+                                </div>
+                                <div class="formula-item">
+                                    <span class="label">Weather Factor:</span>
+                                    <span class="value">Dome Game</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="referee-info">
+                            <i class="fas fa-whistle"></i>
+                            <span>Ref: Carl Cheffers - Favors QBs (15% higher completion rate)</span>
+                        </div>
+                    </div>
+
+                    <div class="prop-card edge-medium" data-sport="nfl">
+                        <div class="prop-header">
+                            <span class="player-name">Cooper Kupp</span>
+                            <span class="team">LAR</span>
+                            <span class="sport-badge nfl">NFL</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="stat-line">
+                                <span class="stat">Receptions</span>
+                                <span class="line">6.5</span>
+                            </div>
+                            <div class="prediction-section">
+                                <div class="prediction">
+                                    <span class="direction over">OVER</span>
+                                    <span class="probability">64.8%</span>
+                                </div>
+                                <div class="edge-info">
+                                    <span class="edge-value">+8.9% Edge</span>
+                                    <span class="confidence">Medium Confidence</span>
+                                </div>
+                            </div>
+                            <div class="formula-breakdown">
+                                <div class="formula-item">
+                                    <span class="label">Last 5 Games:</span>
+                                    <span class="value">7.4 avg</span>
+                                </div>
+                                <div class="formula-item">
+                                    <span class="label">Target Share:</span>
+                                    <span class="value">28.3%</span>
+                                </div>
+                                <div class="formula-item">
+                                    <span class="label">Opponent Allow:</span>
+                                    <span class="value">7.8 rec/game</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="referee-info">
+                            <i class="fas fa-whistle"></i>
+                            <span>Ref: Brad Allen - Average pace, balanced calls</span>
+                        </div>
+                    </div>
+
+                    <!-- NBA Props -->
+                    <div class="prop-card edge-high" data-sport="nba">
+                        <div class="prop-header">
+                            <span class="player-name">Nikola Jokic</span>
+                            <span class="team">DEN</span>
+                            <span class="sport-badge nba">NBA</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="stat-line">
+                                <span class="stat">Reb + Assists</span>
+                                <span class="line">22.0</span>
+                            </div>
+                            <div class="prediction-section">
+                                <div class="prediction">
+                                    <span class="direction over">OVER</span>
+                                    <span class="probability">68.3%</span>
+                                </div>
+                                <div class="edge-info">
+                                    <span class="edge-value">+14.7% Edge</span>
+                                    <span class="confidence">Very High Confidence</span>
+                                </div>
+                            </div>
+                            <div class="formula-breakdown">
+                                <div class="formula-item">
+                                    <span class="label">Expected Reb:</span>
+                                    <span class="value">12.1 (Poisson: 0.72)</span>
+                                </div>
+                                <div class="formula-item">
+                                    <span class="label">Expected Assists:</span>
+                                    <span class="value">9.3 (Normal dist)</span>
+                                </div>
+                                <div class="formula-item">
+                                    <span class="label">Total Expected:</span>
+                                    <span class="value">21.4 (95% CI: 18.2-24.6)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="referee-info">
+                            <i class="fas fa-whistle"></i>
+                            <span>Ref: Marc Davis - Favors centers (+12% reb rate)</span>
+                        </div>
+                    </div>
+
+                    <div class="prop-card edge-medium" data-sport="nba">
+                        <div class="prop-header">
+                            <span class="player-name">LeBron James</span>
+                            <span class="team">LAL</span>
+                            <span class="sport-badge nba">NBA</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="stat-line">
+                                <span class="stat">Points</span>
+                                <span class="line">24.5</span>
+                            </div>
+                            <div class="prediction-section">
+                                <div class="prediction">
+                                    <span class="direction over">OVER</span>
+                                    <span class="probability">65.1%</span>
+                                </div>
+                                <div class="edge-info">
+                                    <span class="edge-value">+9.2% Edge</span>
+                                    <span class="confidence">Medium Confidence</span>
+                                </div>
+                            </div>
+                            <div class="formula-breakdown">
+                                <div class="formula-item">
+                                    <span class="label">Season Avg:</span>
+                                    <span class="value">26.8 pts</span>
+                                </div>
+                                <div class="formula-item">
+                                    <span class="label">Last 10:</span>
+                                    <span class="value">25.2 pts</span>
+                                </div>
+                                <div class="formula-item">
+                                    <span class="label">Home Split:</span>
+                                    <span class="value">+1.4 pts</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="referee-info">
+                            <i class="fas fa-whistle"></i>
+                            <span>Ref: Tony Brothers - High foul rate, rest advantage</span>
+                        </div>
+                    </div>
+
+                    <!-- MLB Props -->
+                    <div class="prop-card edge-high" data-sport="mlb">
+                        <div class="prop-header">
+                            <span class="player-name">Shohei Ohtani</span>
+                            <span class="team">LAD</span>
+                            <span class="sport-badge mlb">MLB</span>
+                        </div>
+                        <div class="prop-details">
+                            <div class="stat-line">
+                                <span class="stat">Total Bases</span>
+                                <span class="line">1.5</span>
+                            </div>
+                            <div class="prediction-section">
+                                <div class="prediction">
+                                    <span class="direction over">OVER</span>
+                                    <span class="probability">72.4%</span>
+                                </div>
+                                <div class="edge-info">
+                                    <span class="edge-value">+16.8% Edge</span>
+                                    <span class="confidence">Very High Confidence</span>
+                                </div>
+                            </div>
+                            <div class="formula-breakdown">
+                                <div class="formula-item">
+                                    <span class="label">Hit Rate:</span>
+                                    <span class="value">0.347 (21.3% XBH)</span>
+                                </div>
+                                <div class="formula-item">
+                                    <span class="label">AB Today:</span>
+                                    <span class="value">4.1 (projected)</span>
+                                </div>
+                                <div class="formula-item">
+                                    <span class="label">Expected TB:</span>
+                                    <span class="value">1.6 (binomial prob)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="referee-info">
+                            <i class="fas fa-circle"></i>
+                            <span>Ump: Jerry Meals - Wide zone, contact-friendly</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Injury Reports -->
+        <section class="injury-reports">
+            <div class="container">
+                <h2>Weekly Injury Reports</h2>
+                <div class="injury-grid">
+                    <div class="injury-card">
+                        <h3>NFL</h3>
+                        <div class="injury-list">
+                            <div class="injury-item questionable">
+                                <span class="player">Stefon Diggs (BUF)</span>
+                                <span class="status">Questionable - Ankle</span>
+                            </div>
+                            <div class="injury-item out">
+                                <span class="player">Chris Godwin (TB)</span>
+                                <span class="status">Out - Hamstring</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="injury-card">
+                        <h3>NBA</h3>
+                        <div class="injury-list">
+                            <div class="injury-item doubtful">
+                                <span class="player">Anthony Davis (LAL)</span>
+                                <span class="status">Doubtful - Foot</span>
+                            </div>
+                            <div class="injury-item probable">
+                                <span class="player">Jayson Tatum (BOS)</span>
+                                <span class="status">Probable - Hip</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="injury-card">
+                        <h3>MLB</h3>
+                        <div class="injury-list">
+                            <div class="injury-item questionable">
+                                <span class="player">Aaron Judge (NYY)</span>
+                                <span class="status">Questionable - Toe</span>
+                            </div>
+                            <div class="injury-item out">
+                                <span class="player">Mike Trout (LAA)</span>
+                                <span class="status">Out - Wrist</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/time-sync.js"></script>
+    <script src="js/props-calculator.js"></script>
+</body>
+</html>
